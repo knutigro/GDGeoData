@@ -1,0 +1,1 @@
+../../../../../Pod/Classes/GDGeoData-Bridging-Header.h

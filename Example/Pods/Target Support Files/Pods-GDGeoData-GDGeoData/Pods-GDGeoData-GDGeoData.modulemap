@@ -1,0 +1,6 @@
+framework module GDGeoData {
+  umbrella header "Pods-GDGeoData-GDGeoData-umbrella.h"
+
+  export *
+  module * { export * }
+}
