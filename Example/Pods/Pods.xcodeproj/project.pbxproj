@@ -44,10 +44,12 @@
 		3C7798FE848D714CDE4ED12D /* XCTestRun+Specta.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B5C6F0E8F040454DA9D53 /* XCTestRun+Specta.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		3CB042097F67845B6D6387B1 /* EXPMatchers+beInTheRangeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 72B3B569FC842F404D5A4053 /* EXPMatchers+beInTheRangeOf.h */; };
 		479CF21FD0B291D7FAE81FCA /* Pods-GDGeoData-Specta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6EEA766FF4856173BD9625 /* Pods-GDGeoData-Specta-dummy.m */; };
-		49D34BE81A7297080048797B /* GDCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D34BE41A7297080048797B /* GDCountries.json */; };
-		49D34BE91A7297080048797B /* GDCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D34BE51A7297080048797B /* GDCountry.swift */; };
-		49D34BEA1A7297080048797B /* GDRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D34BE61A7297080048797B /* GDRegion.swift */; };
-		49D34BEB1A7297080048797B /* GDRegions.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D34BE71A7297080048797B /* GDRegions.json */; };
+		49D34BF51A72F26C0048797B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 49D34BED1A72F26C0048797B /* .gitkeep */; };
+		49D34BF61A72F26C0048797B /* GDCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D34BEE1A72F26C0048797B /* GDCountries.json */; };
+		49D34BF71A72F26C0048797B /* GDRegions.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D34BEF1A72F26C0048797B /* GDRegions.json */; };
+		49D34BF81A72F26C0048797B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 49D34BF11A72F26C0048797B /* .gitkeep */; };
+		49D34BF91A72F26C0048797B /* GDCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D34BF21A72F26C0048797B /* GDCountry.swift */; };
+		49D34BFA1A72F26C0048797B /* GDRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D34BF41A72F26C0048797B /* GDRegion.swift */; };
 		4F1E090F3979427229AB769C /* NSObject+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DD5B8E8F755359D327CE1A4 /* NSObject+Expecta.h */; };
 		55609D9D35A91693626BC544 /* XCTestCase+Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = D0A03FD3534ED0D67576E434 /* XCTestCase+Specta.h */; };
 		5922D5347A73D1195676583F /* XCTestLog+Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = FFDBF704A5C44EE36E349DDF /* XCTestLog+Specta.h */; };
@@ -190,10 +192,13 @@
 		47B52AACCD96309BF2EE3C6A /* Pods-GDGeoData-GDGeoData.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDGeoData-GDGeoData.xcconfig"; sourceTree = "<group>"; };
 		48AB29F05BE1EBFB59B4DD47 /* EXPMatchers+beNil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beNil.m"; path = "src/matchers/EXPMatchers+beNil.m"; sourceTree = "<group>"; };
 		49D34BE31A7297080048797B /* GDGeoData-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GDGeoData-Bridging-Header.h"; sourceTree = "<group>"; };
-		49D34BE41A7297080048797B /* GDCountries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDCountries.json; sourceTree = "<group>"; };
-		49D34BE51A7297080048797B /* GDCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDCountry.swift; sourceTree = "<group>"; };
-		49D34BE61A7297080048797B /* GDRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDRegion.swift; sourceTree = "<group>"; };
-		49D34BE71A7297080048797B /* GDRegions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDRegions.json; sourceTree = "<group>"; };
+		49D34BED1A72F26C0048797B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		49D34BEE1A72F26C0048797B /* GDCountries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDCountries.json; sourceTree = "<group>"; };
+		49D34BEF1A72F26C0048797B /* GDRegions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDRegions.json; sourceTree = "<group>"; };
+		49D34BF11A72F26C0048797B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		49D34BF21A72F26C0048797B /* GDCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDCountry.swift; sourceTree = "<group>"; };
+		49D34BF31A72F26C0048797B /* GDGeoData-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GDGeoData-Bridging-Header.h"; sourceTree = "<group>"; };
+		49D34BF41A72F26C0048797B /* GDRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDRegion.swift; sourceTree = "<group>"; };
 		4A2A972C38FD4A77CF995B62 /* EXPMatchers+endWith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+endWith.h"; path = "src/matchers/EXPMatchers+endWith.h"; sourceTree = "<group>"; };
 		4B1EA3AED259B1140C6AD4E6 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4C9AE2E765083208223C2463 /* Pods-GDGeoData-Specta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDGeoData-Specta.xcconfig"; sourceTree = "<group>"; };
@@ -456,6 +461,29 @@
 			path = Expecta;
 			sourceTree = "<group>";
 		};
+		49D34BEC1A72F26C0048797B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				49D34BED1A72F26C0048797B /* .gitkeep */,
+				49D34BEE1A72F26C0048797B /* GDCountries.json */,
+				49D34BEF1A72F26C0048797B /* GDRegions.json */,
+			);
+			name = Assets;
+			path = Pod/Assets;
+			sourceTree = "<group>";
+		};
+		49D34BF01A72F26C0048797B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				49D34BF11A72F26C0048797B /* .gitkeep */,
+				49D34BF21A72F26C0048797B /* GDCountry.swift */,
+				49D34BF31A72F26C0048797B /* GDGeoData-Bridging-Header.h */,
+				49D34BF41A72F26C0048797B /* GDRegion.swift */,
+			);
+			name = Classes;
+			path = Pod/Classes;
+			sourceTree = "<group>";
+		};
 		56CBE1802B3EAF5D6CA2938A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,10 +527,8 @@
 		9448F5892D805BAD2246CD73 /* GDGeoData */ = {
 			isa = PBXGroup;
 			children = (
-				49D34BE41A7297080048797B /* GDCountries.json */,
-				49D34BE51A7297080048797B /* GDCountry.swift */,
-				49D34BE61A7297080048797B /* GDRegion.swift */,
-				49D34BE71A7297080048797B /* GDRegions.json */,
+				49D34BEC1A72F26C0048797B /* Assets */,
+				49D34BF01A72F26C0048797B /* Classes */,
 				A495B17760A5D8EED3D1230A /* Support Files */,
 				49D34BE31A7297080048797B /* GDGeoData-Bridging-Header.h */,
 			);
@@ -773,8 +799,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49D34BEB1A7297080048797B /* GDRegions.json in Resources */,
-				49D34BE81A7297080048797B /* GDCountries.json in Resources */,
+				49D34BF51A72F26C0048797B /* .gitkeep in Resources */,
+				49D34BF71A72F26C0048797B /* GDRegions.json in Resources */,
+				49D34BF61A72F26C0048797B /* GDCountries.json in Resources */,
+				49D34BF81A72F26C0048797B /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -848,8 +876,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49D34BEA1A7297080048797B /* GDRegion.swift in Sources */,
-				49D34BE91A7297080048797B /* GDCountry.swift in Sources */,
+				49D34BFA1A72F26C0048797B /* GDRegion.swift in Sources */,
+				49D34BF91A72F26C0048797B /* GDCountry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
