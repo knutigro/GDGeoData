@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes'
   s.resource_bundles = {
-    'GDGeoData' => ['Pod/Assets/*.png']
+    'GDGeoData' => ['Pod/Assets/*.json']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

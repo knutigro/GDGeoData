@@ -19,7 +19,6 @@
 		0DB2814628F03BAD4475BF07 /* Pods-GDGeoData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDGeoData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GDGeoData/Pods-GDGeoData.debug.xcconfig"; sourceTree = "<group>"; };
 		13FFE4BE26FCA92A17E7DD7A /* GDGeoData.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GDGeoData.podspec; path = ../GDGeoData.podspec; sourceTree = "<group>"; };
 		34FDEFD6F00396AE271C6B88 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		49D34BFF1A730A710048797B /* Specs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Specs.h; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* GDGeoData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDGeoData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,7 +93,6 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				49D34BFF1A730A710048797B /* Specs.h */,
 				6003F5BB195388D20070C39A /* Tests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
@@ -335,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DB2814628F03BAD4475BF07 /* Pods-GDGeoData.debug.xcconfig */;
 			buildSettings = {
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -357,6 +356,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 67EDDFAF2DAF03E76CE012DA /* Pods-GDGeoData.release.xcconfig */;
 			buildSettings = {
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

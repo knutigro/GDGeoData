@@ -124,8 +124,8 @@
 		492D2829C01AB6AF9D48CB96 /* MKTExecutesBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 437707E3827D3AF634153C7A /* MKTExecutesBlock.m */; };
 		499E8D0C0E4A34EA75A46165 /* MKTAtLeastTimes.h in Headers */ = {isa = PBXBuildFile; fileRef = FE01BDF8BA8A5A096644A68E /* MKTAtLeastTimes.h */; };
 		49A914022F8246BE319E99B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6030D00178CAF5230BA4EE /* Foundation.framework */; };
-		49D34C021A730D380048797B /* GDCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D34C001A730D380048797B /* GDCountries.json */; };
-		49D34C031A730D380048797B /* GDRegions.json in Resources */ = {isa = PBXBuildFile; fileRef = 49D34C011A730D380048797B /* GDRegions.json */; };
+		49E871571A757F8B00671135 /* GDCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 49E871541A757F8B00671135 /* GDCountries.json */; };
+		49E871581A757F8B00671135 /* GDRegions.json in Resources */ = {isa = PBXBuildFile; fileRef = 49E871551A757F8B00671135 /* GDRegions.json */; };
 		4A36E658699CE9F85B714341 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA6030D00178CAF5230BA4EE /* Foundation.framework */; };
 		4B476D0B08465CA373C3B6F2 /* MKTObjectArgumentGetter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ECA67B864B67CF679352BF7 /* MKTObjectArgumentGetter.h */; };
 		4B824460E186D7CD282A4597 /* MKTLongLongReturnSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FCD1BC855A8CDBD364710D /* MKTLongLongReturnSetter.m */; };
@@ -583,8 +583,8 @@
 		49872DD56EDDA392C301B8CB /* EXPMatchers+beKindOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beKindOf.m"; path = "src/matchers/EXPMatchers+beKindOf.m"; sourceTree = "<group>"; };
 		49A8156E9AC51DA03AF3E9FF /* HCXCTestFailureHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HCXCTestFailureHandler.m; path = Source/Core/Helpers/TestFailureHandlers/HCXCTestFailureHandler.m; sourceTree = "<group>"; };
 		49C553E843B36703743C9F2D /* HCMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HCMatcher.h; path = Source/Core/HCMatcher.h; sourceTree = "<group>"; };
-		49D34C001A730D380048797B /* GDCountries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDCountries.json; sourceTree = "<group>"; };
-		49D34C011A730D380048797B /* GDRegions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDRegions.json; sourceTree = "<group>"; };
+		49E871541A757F8B00671135 /* GDCountries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDCountries.json; sourceTree = "<group>"; };
+		49E871551A757F8B00671135 /* GDRegions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDRegions.json; sourceTree = "<group>"; };
 		4A9B84E60F7A31F36FE64AE0 /* SPTReporter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTReporter.h; path = src/SPTReporter.h; sourceTree = "<group>"; };
 		4AA62BC2B5D20D335499A5EA /* Pods-GDGeoData-OCMockito-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GDGeoData-OCMockito-dummy.m"; sourceTree = "<group>"; };
 		4B306454528F7449D3FD327C /* MKTAtLeastTimes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKTAtLeastTimes.m; path = Source/OCMockito/MKTAtLeastTimes.m; sourceTree = "<group>"; };
@@ -1029,6 +1029,7 @@
 		444B2DC3358EF8225CF44959 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				49E871521A757F8B00671135 /* Assets */,
 				BBF16B62EBDCDA2E6320B049 /* Classes */,
 			);
 			path = Pod;
@@ -1169,6 +1170,15 @@
 				8216994F911358BBFCFFE54E /* Support Files */,
 			);
 			path = OCMockito;
+			sourceTree = "<group>";
+		};
+		49E871521A757F8B00671135 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				49E871541A757F8B00671135 /* GDCountries.json */,
+				49E871551A757F8B00671135 /* GDRegions.json */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		62A2097EA620E74AB18B223D = {
@@ -1562,8 +1572,6 @@
 		BBF16B62EBDCDA2E6320B049 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				49D34C001A730D380048797B /* GDCountries.json */,
-				49D34C011A730D380048797B /* GDRegions.json */,
 				D620FFC1DC5BA782DD5EE9F4 /* GDCountry.swift */,
 				C21592D31006B513624F1570 /* GDRegion.swift */,
 				17E853E653C6198D1A0059B0 /* GDGeoData-Bridging-Header.h */,
@@ -1984,9 +1992,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E871581A757F8B00671135 /* GDRegions.json in Resources */,
 				9EEC959EAABC32E21082DD1D /* GDGeoData.bundle in Resources */,
-				49D34C031A730D380048797B /* GDRegions.json in Resources */,
-				49D34C021A730D380048797B /* GDCountries.json in Resources */,
+				49E871571A757F8B00671135 /* GDCountries.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

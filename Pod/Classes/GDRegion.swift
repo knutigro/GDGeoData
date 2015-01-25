@@ -34,18 +34,26 @@ let kSubRegions = "sub-regions"
 let kSubRegionCode = "sub-region-code"
 let kSubRegionName = "name"
 
-class GDSubRegion {
+@objc public class GDSubRegion {
     
-    var subRegionName : String?
-    var subRegionCode : String?
+    public var subRegionName : String?
+    public var subRegionCode : String?
     
-    convenience init(dictionary : NSDictionary) {
+    public var description : String {
+        var description = "SubRegion -"
+        description += " SubRegionName: " + (self.subRegionName ?? "nil")
+        description += " SubRegionCode: " + (self.subRegionCode ?? "nil")
+        
+        return description
+    }
+    
+    public convenience init(dictionary : NSDictionary) {
         self.init()
         self.subRegionName = dictionary[kSubRegionName] as? String
         self.subRegionCode = dictionary[kSubRegionCode] as? String
     }
     
-    convenience init?(subRegion : GDSubRegion?) {
+    public convenience init?(subRegion : GDSubRegion?) {
         self.init()
         if let subRegionTemp = subRegion {
             self.subRegionName = subRegionTemp.subRegionName
@@ -55,7 +63,7 @@ class GDSubRegion {
         }
     }
     
-    convenience init?(regionName: String, subRegionName: String) {
+    public convenience init?(regionName: String, subRegionName: String) {
         var tempSubRegion : GDSubRegion?
         if let region = GDRegion(regionName: regionName) {
             for subRegion in region.subRegions {
@@ -65,7 +73,7 @@ class GDSubRegion {
         self.init(subRegion: tempSubRegion)
     }
     
-    convenience init?(regionCode: String, subRegionCode: String) {
+    public convenience init?(regionCode: String, subRegionCode: String) {
         var tempSubRegion : GDSubRegion?
         if let region = GDRegion(regionCode: regionCode) {
             for subRegion in region.subRegions {
@@ -75,7 +83,7 @@ class GDSubRegion {
         self.init(subRegion: tempSubRegion)
     }
     
-    convenience init?(region: GDRegion, subRegionCode: String) {
+    public convenience init?(region: GDRegion, subRegionCode: String) {
         var tempSubRegion : GDSubRegion?
         for subRegion in region.subRegions {
             if (subRegion.subRegionCode?.lowercaseString == subRegionCode.lowercaseString) { tempSubRegion = subRegion; break }
@@ -83,7 +91,7 @@ class GDSubRegion {
         self.init(subRegion: tempSubRegion)
     }
 
-    convenience init?(region: GDRegion, subRegionName: String) {
+    public convenience init?(region: GDRegion, subRegionName: String) {
         var tempSubRegion : GDSubRegion?
         for subRegion in region.subRegions {
             if (subRegion.subRegionName?.lowercaseString == subRegionName.lowercaseString) { tempSubRegion = subRegion; break }
@@ -94,7 +102,7 @@ class GDSubRegion {
     /*
     *  Returns Array with all coutries whithin a subregion
     */
-    func countries() -> [GDCountry]{
+    public func countries() -> [GDCountry]{
         var countries = [GDCountry]()
         for country in GDCountry.allCountries {
             if (country.subRegionCode?.lowercaseString == self.subRegionCode?.lowercaseString) {
@@ -112,14 +120,23 @@ class GDSubRegion {
 */
 let kRegionName = "name"
 let kRegionCode = "region-code"
+let kGDRegionJSONFilePath = "GDRegions"
 
-class GDRegion {
+@objc public class GDRegion {
     
-    var regionName : String?
-    var regionCode : String?
-    var subRegions = [GDSubRegion]()
+    public var regionName : String?
+    public var regionCode : String?
+    public var subRegions = [GDSubRegion]()
     
-    convenience init(dictionary : NSDictionary) {
+    public var description : String {
+        var description = "SubRegion -"
+        description += " RegionName: " + (self.regionName ?? "nil")
+        description += " RegionCode: " + (self.regionCode ?? "nil")
+        
+        return description
+    }
+
+    public convenience init(dictionary : NSDictionary) {
         self.init()
         self.regionName = dictionary[kRegionName] as? String
         self.regionCode = dictionary[kRegionCode] as? String
@@ -132,7 +149,7 @@ class GDRegion {
         }
     }
     
-    convenience init?(region : GDRegion?) {
+    public convenience init?(region : GDRegion?) {
         self.init()
         if let regionTemp = region {
             self.regionName = regionTemp.regionName
@@ -143,7 +160,7 @@ class GDRegion {
         }
     }
     
-    convenience init?(regionName: String) {
+    public convenience init?(regionName: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.allRegions {
             if (region.regionName?.lowercaseString == regionName.lowercaseString) { tempRegion = region; break }
@@ -151,16 +168,15 @@ class GDRegion {
         self.init(region: tempRegion)
     }
 
-    convenience init?(regionCode: String) {
+    public convenience init?(regionCode: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.allRegions {
             if (region.regionCode?.lowercaseString == regionCode.lowercaseString) { tempRegion = region; break }
         }
-        println("tempRegion \(tempRegion) name \(tempRegion?.regionName)")
         self.init(region: tempRegion)
     }
     
-    convenience init?(subRegionCode: String) {
+    public convenience init?(subRegionCode: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.allRegions {
             for subRegion in region.subRegions {
@@ -170,7 +186,7 @@ class GDRegion {
         self.init(region: tempRegion)
     }
     
-    convenience init?(subRegionName: String) {
+    public convenience init?(subRegionName: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.allRegions {
             for subRegion in region.subRegions {
@@ -180,7 +196,7 @@ class GDRegion {
         self.init(region: tempRegion)
     }
     
-    class var allRegions: [GDRegion] {
+    public class var allRegions: [GDRegion] {
         get {
             struct Static {
                 static var regionArrayInstance : [GDRegion]? = nil
@@ -189,7 +205,9 @@ class GDRegion {
             var regionArrayTemp = [GDRegion]()
             dispatch_once(&Static.regionOnceToken) {
                 var error:NSError?
-                if let path = NSBundle.mainBundle().pathForResource("GDRegions", ofType: "json") {
+                var bundle = NSBundle(forClass: self)
+
+                if let path = bundle.pathForResource(kGDRegionJSONFilePath, ofType: "json") {
                     if let data = NSData(contentsOfFile: path) {
                         if let json:AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error:&error) {
                             // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
@@ -214,7 +232,7 @@ class GDRegion {
     /*
     *  Returns Array with all coutries whithin a region
     */
-    func countries() -> [GDCountry]{
+    public func countries() -> [GDCountry]{
         var countries = [GDCountry]()
         for country in GDCountry.allCountries {
             if (country.regionCode?.lowercaseString == self.regionCode?.lowercaseString) {
