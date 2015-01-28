@@ -11,12 +11,12 @@ Swift wrapper for easy use of country and region data. [DataSource](https://gith
 
 GDGeoData can be imported into both Swift and Objective-C projects.
 
-Objective-C example: 
+Objective-C: 
 
 ```Objective-C
 #import "GDGeoData/GDGeoData-Swift.h"
 
-x@interface GDCountry (Dummy)
+@interface GDCountry (Dummy)
 + (instancetype)alloc;
 @end
 
