@@ -13,7 +13,8 @@ GDGeoData can be imported into both Swift and Objective-C projects.
 
 Objective-C example: 
 
-```#import "GDGeoData/GDGeoData-Swift.h"
+```Objective-C
+#import "GDGeoData/GDGeoData-Swift.h"
 
 x@interface GDCountry (Dummy)
 + (instancetype)alloc;
@@ -30,8 +31,8 @@ x@interface GDCountry (Dummy)
 NSLog(@"all countries count %li", (long)[GDCountry allCountries].count);
 
 GDCountry *country = [[GDCountry alloc] initWithName:@"Norway"];
-NSLog(@"Norway %@", country.description);```
-
+NSLog(@"Norway %@", country.description);
+```
 
 ## Installation
 
