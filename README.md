@@ -9,9 +9,33 @@ Swift wrapper for easy use of country and region data. [DataSource](https://gith
 
 ## Usage
 
+GDGeoData can be imported into both Swift and Objective-C projects.
+
+Objective-C example: 
+
+```#import "GDGeoData/GDGeoData-Swift.h"
+
+x@interface GDCountry (Dummy)
++ (instancetype)alloc;
+@end
+
+@interface GDRegion (Dummy)
++ (instancetype)alloc;
+@end
+
+@interface GDSubRegion (Dummy)
++ (instancetype)alloc;
+@end
+
+NSLog(@"all countries count %li", (long)[GDCountry allCountries].count);
+
+GDCountry *country = [[GDCountry alloc] initWithName:@"Norway"];
+NSLog(@"Norway %@", country.description);```
+
+
 ## Installation
 
-GDGeoData is available through [CocoaPods](http://cocoapods.org). To install
+GDGeoData is available through a private [CocoaPod](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
     pod 'GDGeoData', :git => 'https://github.com/knutigro/GDGeoData.git'

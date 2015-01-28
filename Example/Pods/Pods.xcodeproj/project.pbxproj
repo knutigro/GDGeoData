@@ -1185,8 +1185,8 @@
 			isa = PBXGroup;
 			children = (
 				492310B01A79876800F30664 /* GDCountry.swift */,
-				492310B11A79876800F30664 /* GDGeoData-Bridging-Header.h */,
 				492310B21A79876800F30664 /* GDRegion.swift */,
+				492310B11A79876800F30664 /* GDGeoData-Bridging-Header.h */,
 			);
 			name = Classes;
 			path = Pod/Classes;
