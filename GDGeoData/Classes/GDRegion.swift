@@ -34,30 +34,35 @@ let kSubRegions = "sub-regions"
 let kSubRegionCode = "sub-region-code"
 let kSubRegionName = "name"
 
-@objc public class GDSubRegion {
-    
-    public var subRegionName : String?
-    public var subRegionCode : String?
-    
-    public var description : String {
+@objc public class GDSubRegion : GDGeoObject{
+
+    override public var debugDescription : String {
         var description = "SubRegion -"
-        description += " SubRegionName: " + (self.subRegionName ?? "nil")
-        description += " SubRegionCode: " + (self.subRegionCode ?? "nil")
+        description += "Name: " + (self.name ?? "nil")
+        description += "Code: " + (self.code ?? "nil")
+        
+        return description
+    }
+
+    override  public var description : String {
+        var description = "SubRegion -"
+        description += "\nName: " + (self.name ?? "nil")
+        description += "\nCode: " + (self.code ?? "nil")
         
         return description
     }
     
-    public convenience init(dictionary : NSDictionary) {
-        self.init()
-        self.subRegionName = dictionary[kSubRegionName] as? String
-        self.subRegionCode = dictionary[kSubRegionCode] as? String
+    public init(dictionary : NSDictionary) {
+        super.init()
+        self.name = dictionary[kSubRegionName] as? String
+        self.code = dictionary[kSubRegionCode] as? String
     }
     
-    public convenience init?(subRegion : GDSubRegion?) {
-        self.init()
+    public init?(subRegion : GDSubRegion?) {
+        super.init()
         if let subRegionTemp = subRegion {
-            self.subRegionName = subRegionTemp.subRegionName
-            self.subRegionCode = subRegionTemp.subRegionCode
+            self.name = subRegionTemp.name
+            self.code = subRegionTemp.code
         } else {
             return nil
         }
@@ -67,7 +72,7 @@ let kSubRegionName = "name"
         var tempSubRegion : GDSubRegion?
         if let region = GDRegion(regionName: regionName) {
             for subRegion in region.subRegions {
-                if (subRegion.subRegionName?.lowercaseString == subRegionName.lowercaseString) { tempSubRegion = subRegion; break }
+                if (subRegion.name?.lowercaseString == subRegionName.lowercaseString) { tempSubRegion = subRegion; break }
             }
         }
         self.init(subRegion: tempSubRegion)
@@ -77,7 +82,7 @@ let kSubRegionName = "name"
         var tempSubRegion : GDSubRegion?
         if let region = GDRegion(regionCode: regionCode) {
             for subRegion in region.subRegions {
-                if (subRegion.subRegionCode?.lowercaseString == subRegionCode.lowercaseString) { tempSubRegion = subRegion; break }
+                if (subRegion.code?.lowercaseString == subRegionCode.lowercaseString) { tempSubRegion = subRegion; break }
             }
         }
         self.init(subRegion: tempSubRegion)
@@ -86,7 +91,7 @@ let kSubRegionName = "name"
     public convenience init?(region: GDRegion, subRegionCode: String) {
         var tempSubRegion : GDSubRegion?
         for subRegion in region.subRegions {
-            if (subRegion.subRegionCode?.lowercaseString == subRegionCode.lowercaseString) { tempSubRegion = subRegion; break }
+            if (subRegion.code?.lowercaseString == subRegionCode.lowercaseString) { tempSubRegion = subRegion; break }
         }
         self.init(subRegion: tempSubRegion)
     }
@@ -94,7 +99,7 @@ let kSubRegionName = "name"
     public convenience init?(region: GDRegion, subRegionName: String) {
         var tempSubRegion : GDSubRegion?
         for subRegion in region.subRegions {
-            if (subRegion.subRegionName?.lowercaseString == subRegionName.lowercaseString) { tempSubRegion = subRegion; break }
+            if (subRegion.name?.lowercaseString == subRegionName.lowercaseString) { tempSubRegion = subRegion; break }
         }
         self.init(subRegion: tempSubRegion)
     }
@@ -105,7 +110,7 @@ let kSubRegionName = "name"
     public func countries() -> [GDCountry]{
         var countries = [GDCountry]()
         for country in GDCountry.allCountries {
-            if (country.subRegionCode?.lowercaseString == self.subRegionCode?.lowercaseString) {
+            if (country.subRegionCode?.lowercaseString == self.code?.lowercaseString) {
                 countries.append(country)
             }
         }
@@ -122,24 +127,30 @@ let kRegionName = "name"
 let kRegionCode = "region-code"
 let kGDRegionJSONFilePath = "GDRegions"
 
-@objc public class GDRegion {
+@objc public class GDRegion : GDGeoObject {
     
-    public var regionName : String?
-    public var regionCode : String?
     public var subRegions = [GDSubRegion]()
     
-    public var description : String {
+    override public var debugDescription : String {
         var description = "SubRegion -"
-        description += " RegionName: " + (self.regionName ?? "nil")
-        description += " RegionCode: " + (self.regionCode ?? "nil")
+        description += "Name: " + (self.name ?? "nil")
+        description += "Code: " + (self.code ?? "nil")
+        
+        return description
+    }
+
+    override public var description : String {
+        var description = "SubRegion -"
+        description += "\nName: " + (self.name ?? "nil")
+        description += "\nCode: " + (self.code ?? "nil")
         
         return description
     }
 
     public convenience init(dictionary : NSDictionary) {
         self.init()
-        self.regionName = dictionary[kRegionName] as? String
-        self.regionCode = dictionary[kRegionCode] as? String
+        self.name = dictionary[kRegionName] as? String
+        self.code = dictionary[kRegionCode] as? String
         
         if let regions = dictionary[kSubRegions] as? Array<NSDictionary> {
             for regionDic in regions {
@@ -152,8 +163,8 @@ let kGDRegionJSONFilePath = "GDRegions"
     public convenience init?(region : GDRegion?) {
         self.init()
         if let regionTemp = region {
-            self.regionName = regionTemp.regionName
-            self.regionCode = regionTemp.regionCode
+            self.name = regionTemp.name
+            self.code = regionTemp.code
             self.subRegions = regionTemp.subRegions
         } else {
             return nil
@@ -163,7 +174,7 @@ let kGDRegionJSONFilePath = "GDRegions"
     public convenience init?(regionName: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.allRegions {
-            if (region.regionName?.lowercaseString == regionName.lowercaseString) { tempRegion = region; break }
+            if (region.name?.lowercaseString == regionName.lowercaseString) { tempRegion = region; break }
         }
         self.init(region: tempRegion)
     }
@@ -171,7 +182,7 @@ let kGDRegionJSONFilePath = "GDRegions"
     public convenience init?(regionCode: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.allRegions {
-            if (region.regionCode?.lowercaseString == regionCode.lowercaseString) { tempRegion = region; break }
+            if (region.code?.lowercaseString == regionCode.lowercaseString) { tempRegion = region; break }
         }
         self.init(region: tempRegion)
     }
@@ -180,7 +191,7 @@ let kGDRegionJSONFilePath = "GDRegions"
         var tempRegion : GDRegion?
         for region in GDRegion.allRegions {
             for subRegion in region.subRegions {
-                if (subRegion.subRegionCode?.lowercaseString == subRegionCode.lowercaseString) { tempRegion = region; break }
+                if (subRegion.code?.lowercaseString == subRegionCode.lowercaseString) { tempRegion = region; break }
             }
         }
         self.init(region: tempRegion)
@@ -190,7 +201,7 @@ let kGDRegionJSONFilePath = "GDRegions"
         var tempRegion : GDRegion?
         for region in GDRegion.allRegions {
             for subRegion in region.subRegions {
-                if (subRegion.subRegionName?.lowercaseString == subRegionName.lowercaseString) { tempRegion = region; break }
+                if (subRegion.name?.lowercaseString == subRegionName.lowercaseString) { tempRegion = region; break }
             }
         }
         self.init(region: tempRegion)
@@ -235,7 +246,7 @@ let kGDRegionJSONFilePath = "GDRegions"
     public func countries() -> [GDCountry]{
         var countries = [GDCountry]()
         for country in GDCountry.allCountries {
-            if (country.regionCode?.lowercaseString == self.regionCode?.lowercaseString) {
+            if (country.regionCode?.lowercaseString == self.code?.lowercaseString) {
                 countries.append(country)
             }
         }

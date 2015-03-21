@@ -25,6 +25,20 @@
 
 import Foundation
 
+@objc public class GDGeoObject {
+    public var name : String?
+    public var code : String?
+    public var debugDescription : String {
+        return "GDGeoObject"
+    }
+    public var description : String {
+        return "GDGeoObject"
+    }
+    
+    public init() {
+    }
+}
+
 let kCountryName = "name"
 let kCountryAlpha2 = "alpha-2"
 let kCountryAlpha3 = "alpha-3"
@@ -33,39 +47,54 @@ let kCountryIso_3166_2 = "iso_3166-2"
 
 let kGDCountryJSONFilePath = "GDCountries"
 
-@objc public class GDCountry {
+@objc public class GDCountry : GDGeoObject {
 
-    public var name : String?
     public var alpha2 : String?
     public var alpha3 : String?
-    public var countryCode : String?
     public var iso_3166_2 : String?
     public var region : GDRegion?
     public var subRegion : GDSubRegion?
     public var regionCode : String?
     public var subRegionCode : String?
     
-    public var description : String {
+    override public var debugDescription : String {
         var description = "Country -"
         description += " Name: " + (self.name ?? "nil")
         description += " Alpha2: " + (self.alpha2 ?? "nil")
         description += " Alpha3: " + (self.alpha3 ?? "nil")
-        description += " CountryCode: " + (self.countryCode ?? "nil")
+        description += " CountryCode: " + (self.code ?? "nil")
         description += " Iso_3166_2: " + (self.iso_3166_2 ?? "nil")
         description += " RegionCode: " + (self.regionCode ?? "nil")
         description += " SubRegionCode: " + (self.subRegionCode ?? "nil")
-        description += " Region: " + (self.region?.regionName ?? "nil")
-        description += " SubRegion: " + (self.subRegion?.subRegionName ?? "nil")
+        description += " Region: " + (self.region?.name ?? "nil")
+        description += " SubRegion: " + (self.subRegion?.name ?? "nil")
 
         return description
     }
     
+    override public var description : String {
+        var description = "Country -"
+        description += "\nName: " + (self.name ?? "nil")
+        description += "\nAlpha2: " + (self.alpha2 ?? "nil")
+        description += "\nAlpha3: " + (self.alpha3 ?? "nil")
+        description += "\nCountryCode: " + (self.code ?? "nil")
+        description += "\nIso_3166_2: " + (self.iso_3166_2 ?? "nil")
+        description += "\nRegionCode: " + (self.regionCode ?? "nil")
+        description += "\nSubRegionCode: " + (self.subRegionCode ?? "nil")
+        description += "\nRegion: " + (self.region?.name ?? "nil")
+        description += "\nSubRegion: " + (self.subRegion?.name ?? "nil")
+        
+        return description
+    }
+    
+    // MARK:  Initializers
+
     public convenience init(dictionary : NSDictionary) {
         self.init()
         self.name = dictionary[kCountryName] as? String
         self.alpha2 = dictionary[kCountryAlpha2] as? String
         self.alpha3 = dictionary[kCountryAlpha3] as? String
-        self.countryCode = dictionary[kCountryCode] as? String
+        self.code = dictionary[kCountryCode] as? String
         self.iso_3166_2 = dictionary[kCountryIso_3166_2] as? String
         self.regionCode = dictionary[kRegionCode] as? String
         self.subRegionCode = dictionary[kSubRegionCode] as? String
@@ -85,7 +114,7 @@ let kGDCountryJSONFilePath = "GDCountries"
             self.name = countryTemp.name
             self.alpha2 = countryTemp.alpha2
             self.alpha3 = countryTemp.alpha3
-            self.countryCode = countryTemp.countryCode
+            self.code = countryTemp.code
             self.iso_3166_2 = countryTemp.iso_3166_2
             self.regionCode = countryTemp.regionCode
             self.subRegionCode = countryTemp.subRegionCode
@@ -123,7 +152,7 @@ let kGDCountryJSONFilePath = "GDCountries"
     public convenience init?(countryCode: String) {
         var tempCountry : GDCountry?
         for country in GDCountry.allCountries {
-            if (country.countryCode?.lowercaseString == countryCode.lowercaseString) { tempCountry = country; break }
+            if (country.code?.lowercaseString == countryCode.lowercaseString) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
     }
@@ -136,6 +165,8 @@ let kGDCountryJSONFilePath = "GDCountries"
         self.init(country: tempCountry)
     }
     
+    // MARK:  Public methods
+
     public class var allCountries: [GDCountry] {
         get {
             struct Static {
