@@ -1,5 +1,5 @@
 #!/bin/sh
 set -e
 
-xctool -project COBezierTableViewDemo/COBezierTableViewDemo.xcodeproj -scheme COBezierTableViewDemo build test -sdk iphonesimulator
+xctool -project GDGeoDataDemo/GDGeoDataDemo.xcodeproj -scheme GDGeoDataDemo build test -sdk iphonesimulator
 
