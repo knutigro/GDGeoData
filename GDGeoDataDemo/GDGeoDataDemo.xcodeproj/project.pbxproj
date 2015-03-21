@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49FEF1381ABCB01300E75579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1371ABCB01300E75579 /* AppDelegate.swift */; };
+		49FEF13A1ABCB01300E75579 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1391ABCB01300E75579 /* ViewController.swift */; };
+		49FEF13D1ABCB01300E75579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF13B1ABCB01300E75579 /* Main.storyboard */; };
+		49FEF13F1ABCB01300E75579 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF13E1ABCB01300E75579 /* Images.xcassets */; };
+		49FEF1421ABCB01300E75579 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF1401ABCB01300E75579 /* LaunchScreen.xib */; };
+		49FEF14E1ABCB01300E75579 /* GDGeoDataDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF14D1ABCB01300E75579 /* GDGeoDataDemoTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49FEF1481ABCB01300E75579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49FEF12A1ABCB01300E75579 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49FEF1311ABCB01300E75579;
+			remoteInfo = GDGeoDataDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49FEF1321ABCB01300E75579 /* GDGeoDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDGeoDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FEF1361ABCB01300E75579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49FEF1371ABCB01300E75579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49FEF1391ABCB01300E75579 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49FEF13C1ABCB01300E75579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49FEF13E1ABCB01300E75579 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		49FEF1411ABCB01300E75579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		49FEF1471ABCB01300E75579 /* GDGeoDataDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDGeoDataDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FEF14C1ABCB01300E75579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49FEF14D1ABCB01300E75579 /* GDGeoDataDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDGeoDataDemoTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49FEF12F1ABCB01300E75579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49FEF1441ABCB01300E75579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49FEF1291ABCB01300E75579 = {
+			isa = PBXGroup;
+			children = (
+				49FEF1341ABCB01300E75579 /* GDGeoDataDemo */,
+				49FEF14A1ABCB01300E75579 /* GDGeoDataDemoTests */,
+				49FEF1331ABCB01300E75579 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49FEF1331ABCB01300E75579 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49FEF1321ABCB01300E75579 /* GDGeoDataDemo.app */,
+				49FEF1471ABCB01300E75579 /* GDGeoDataDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49FEF1341ABCB01300E75579 /* GDGeoDataDemo */ = {
+			isa = PBXGroup;
+			children = (
+				49FEF1371ABCB01300E75579 /* AppDelegate.swift */,
+				49FEF1391ABCB01300E75579 /* ViewController.swift */,
+				49FEF13B1ABCB01300E75579 /* Main.storyboard */,
+				49FEF13E1ABCB01300E75579 /* Images.xcassets */,
+				49FEF1401ABCB01300E75579 /* LaunchScreen.xib */,
+				49FEF1351ABCB01300E75579 /* Supporting Files */,
+			);
+			path = GDGeoDataDemo;
+			sourceTree = "<group>";
+		};
+		49FEF1351ABCB01300E75579 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49FEF1361ABCB01300E75579 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49FEF14A1ABCB01300E75579 /* GDGeoDataDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				49FEF14D1ABCB01300E75579 /* GDGeoDataDemoTests.swift */,
+				49FEF14B1ABCB01300E75579 /* Supporting Files */,
+			);
+			path = GDGeoDataDemoTests;
+			sourceTree = "<group>";
+		};
+		49FEF14B1ABCB01300E75579 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49FEF14C1ABCB01300E75579 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49FEF1311ABCB01300E75579 /* GDGeoDataDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49FEF1511ABCB01300E75579 /* Build configuration list for PBXNativeTarget "GDGeoDataDemo" */;
+			buildPhases = (
+				49FEF12E1ABCB01300E75579 /* Sources */,
+				49FEF12F1ABCB01300E75579 /* Frameworks */,
+				49FEF1301ABCB01300E75579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GDGeoDataDemo;
+			productName = GDGeoDataDemo;
+			productReference = 49FEF1321ABCB01300E75579 /* GDGeoDataDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49FEF1461ABCB01300E75579 /* GDGeoDataDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49FEF1541ABCB01300E75579 /* Build configuration list for PBXNativeTarget "GDGeoDataDemoTests" */;
+			buildPhases = (
+				49FEF1431ABCB01300E75579 /* Sources */,
+				49FEF1441ABCB01300E75579 /* Frameworks */,
+				49FEF1451ABCB01300E75579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49FEF1491ABCB01300E75579 /* PBXTargetDependency */,
+			);
+			name = GDGeoDataDemoTests;
+			productName = GDGeoDataDemoTests;
+			productReference = 49FEF1471ABCB01300E75579 /* GDGeoDataDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49FEF12A1ABCB01300E75579 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Cocmoc;
+				TargetAttributes = {
+					49FEF1311ABCB01300E75579 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					49FEF1461ABCB01300E75579 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 49FEF1311ABCB01300E75579;
+					};
+				};
+			};
+			buildConfigurationList = 49FEF12D1ABCB01300E75579 /* Build configuration list for PBXProject "GDGeoDataDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49FEF1291ABCB01300E75579;
+			productRefGroup = 49FEF1331ABCB01300E75579 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49FEF1311ABCB01300E75579 /* GDGeoDataDemo */,
+				49FEF1461ABCB01300E75579 /* GDGeoDataDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49FEF1301ABCB01300E75579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FEF13D1ABCB01300E75579 /* Main.storyboard in Resources */,
+				49FEF1421ABCB01300E75579 /* LaunchScreen.xib in Resources */,
+				49FEF13F1ABCB01300E75579 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49FEF1451ABCB01300E75579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49FEF12E1ABCB01300E75579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FEF13A1ABCB01300E75579 /* ViewController.swift in Sources */,
+				49FEF1381ABCB01300E75579 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49FEF1431ABCB01300E75579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FEF14E1ABCB01300E75579 /* GDGeoDataDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49FEF1491ABCB01300E75579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49FEF1311ABCB01300E75579 /* GDGeoDataDemo */;
+			targetProxy = 49FEF1481ABCB01300E75579 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49FEF13B1ABCB01300E75579 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49FEF13C1ABCB01300E75579 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49FEF1401ABCB01300E75579 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49FEF1411ABCB01300E75579 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49FEF14F1ABCB01300E75579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49FEF1501ABCB01300E75579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49FEF1521ABCB01300E75579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GDGeoDataDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		49FEF1531ABCB01300E75579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GDGeoDataDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		49FEF1551ABCB01300E75579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GDGeoDataDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDGeoDataDemo.app/GDGeoDataDemo";
+			};
+			name = Debug;
+		};
+		49FEF1561ABCB01300E75579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GDGeoDataDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDGeoDataDemo.app/GDGeoDataDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49FEF12D1ABCB01300E75579 /* Build configuration list for PBXProject "GDGeoDataDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FEF14F1ABCB01300E75579 /* Debug */,
+				49FEF1501ABCB01300E75579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49FEF1511ABCB01300E75579 /* Build configuration list for PBXNativeTarget "GDGeoDataDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FEF1521ABCB01300E75579 /* Debug */,
+				49FEF1531ABCB01300E75579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		49FEF1541ABCB01300E75579 /* Build configuration list for PBXNativeTarget "GDGeoDataDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FEF1551ABCB01300E75579 /* Debug */,
+				49FEF1561ABCB01300E75579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49FEF12A1ABCB01300E75579 /* Project object */;
+}
