@@ -11,7 +11,6 @@
 		49FEF13D1ABCB01300E75579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF13B1ABCB01300E75579 /* Main.storyboard */; };
 		49FEF13F1ABCB01300E75579 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF13E1ABCB01300E75579 /* Images.xcassets */; };
 		49FEF1421ABCB01300E75579 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF1401ABCB01300E75579 /* LaunchScreen.xib */; };
-		49FEF14E1ABCB01300E75579 /* GDGeoDataDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF14D1ABCB01300E75579 /* GDGeoDataDemoTests.swift */; };
 		49FEF1621ABD8B4600E75579 /* GDCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF15A1ABD8B4600E75579 /* GDCountries.json */; };
 		49FEF1631ABD8B4600E75579 /* GDRegions.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF15B1ABD8B4600E75579 /* GDRegions.json */; };
 		49FEF1651ABD8B4600E75579 /* GDCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF15E1ABD8B4600E75579 /* GDCountry.swift */; };
@@ -21,6 +20,11 @@
 		49FEF16D1ABD8BEA00E75579 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF16A1ABD8BEA00E75579 /* README.md */; };
 		49FEF16F1ABD8CEA00E75579 /* GDGeoDataListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF16E1ABD8CEA00E75579 /* GDGeoDataListViewController.swift */; };
 		49FEF1711ABD920500E75579 /* GDGeoDataDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1701ABD920500E75579 /* GDGeoDataDetailViewController.swift */; };
+		49FEF1751ABDABC200E75579 /* GDGeoDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1741ABDABC200E75579 /* GDGeoDataTest.swift */; };
+		49FEF1761ABDAD2D00E75579 /* GDCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF15E1ABD8B4600E75579 /* GDCountry.swift */; };
+		49FEF1771ABDAD3000E75579 /* GDRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1601ABD8B4600E75579 /* GDRegion.swift */; };
+		49FEF1781ABDAD3300E75579 /* GDCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF15A1ABD8B4600E75579 /* GDCountries.json */; };
+		49FEF1791ABDAD3500E75579 /* GDRegions.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF15B1ABD8B4600E75579 /* GDRegions.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +46,6 @@
 		49FEF1411ABCB01300E75579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		49FEF1471ABCB01300E75579 /* GDGeoDataDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDGeoDataDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FEF14C1ABCB01300E75579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49FEF14D1ABCB01300E75579 /* GDGeoDataDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDGeoDataDemoTests.swift; sourceTree = "<group>"; };
 		49FEF15A1ABD8B4600E75579 /* GDCountries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDCountries.json; sourceTree = "<group>"; };
 		49FEF15B1ABD8B4600E75579 /* GDRegions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDRegions.json; sourceTree = "<group>"; };
 		49FEF15E1ABD8B4600E75579 /* GDCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDCountry.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		49FEF16A1ABD8BEA00E75579 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		49FEF16E1ABD8CEA00E75579 /* GDGeoDataListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataListViewController.swift; sourceTree = "<group>"; };
 		49FEF1701ABD920500E75579 /* GDGeoDataDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataDetailViewController.swift; sourceTree = "<group>"; };
+		49FEF1741ABDABC200E75579 /* GDGeoDataTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +121,7 @@
 		49FEF14A1ABCB01300E75579 /* GDGeoDataDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				49FEF14D1ABCB01300E75579 /* GDGeoDataDemoTests.swift */,
+				49FEF1741ABDABC200E75579 /* GDGeoDataTest.swift */,
 				49FEF14B1ABCB01300E75579 /* Supporting Files */,
 			);
 			path = GDGeoDataDemoTests;
@@ -263,6 +267,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FEF1791ABDAD3500E75579 /* GDRegions.json in Resources */,
+				49FEF1781ABDAD3300E75579 /* GDCountries.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49FEF14E1ABCB01300E75579 /* GDGeoDataDemoTests.swift in Sources */,
+				49FEF1771ABDAD3000E75579 /* GDRegion.swift in Sources */,
+				49FEF1751ABDABC200E75579 /* GDGeoDataTest.swift in Sources */,
+				49FEF1761ABDAD2D00E75579 /* GDCountry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
