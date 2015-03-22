@@ -25,20 +25,6 @@
 
 import Foundation
 
-@objc public class GDGeoObject {
-    public var name : String?
-    public var code : String?
-    public var debugDescription : String {
-        return "GDGeoObject"
-    }
-    public var description : String {
-        return "GDGeoObject"
-    }
-    
-    public init() {
-    }
-}
-
 let kCountryName = "name"
 let kCountryAlpha2 = "alpha-2"
 let kCountryAlpha3 = "alpha-3"
@@ -47,8 +33,10 @@ let kCountryIso_3166_2 = "iso_3166-2"
 
 let kGDCountryJSONFilePath = "GDCountries"
 
-@objc public class GDCountry : GDGeoObject {
+@objc public class GDCountry : GDGeoDataObjectProtocol {
 
+    public var name : String?
+    public var code : String?
     public var alpha2 : String?
     public var alpha3 : String?
     public var iso_3166_2 : String?
@@ -57,7 +45,7 @@ let kGDCountryJSONFilePath = "GDCountries"
     public var regionCode : String?
     public var subRegionCode : String?
     
-    override public var debugDescription : String {
+    public var debugDescription : String {
         var description = "Country -"
         description += " Name: " + (self.name ?? "nil")
         description += " Alpha2: " + (self.alpha2 ?? "nil")
@@ -72,7 +60,7 @@ let kGDCountryJSONFilePath = "GDCountries"
         return description
     }
     
-    override public var description : String {
+    public var description : String {
         var description = "Country -"
         description += "\nName: " + (self.name ?? "nil")
         description += "\nAlpha2: " + (self.alpha2 ?? "nil")

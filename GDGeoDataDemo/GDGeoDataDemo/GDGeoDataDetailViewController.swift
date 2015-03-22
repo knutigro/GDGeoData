@@ -11,7 +11,7 @@ import UIKit
 class GDGeoDataDetailViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView?
-    var geoObject : GDGeoObject?
+    var geoObject : GDGeoDataObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -78,7 +78,7 @@ class GDGeoDataTests: XCTestCase {
 
     func testRegionHaveArrayOfCountries() {
         if let region = GDRegion(regionName: "Europe") {
-            XCTAssertGreaterThan(region.countries().count, 0, "Europe should have array of countries greater than 0")
+            XCTAssertGreaterThan(region.countries.count, 0, "Europe should have array of countries greater than 0")
         } else {
             XCTAssertTrue(false, "Europe should be loaded by name")
         }
