@@ -22,11 +22,28 @@ GDCountry.countries
 
 ## Installation
 
-GDGeoData is available through a private [CocoaPod](http://cocoapods.org). To install
+GDGeoData is available through [CocoaPod](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod 'GDGeoData', :git => 'https://github.com/knutigro/GDGeoData.git'
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
+CocoaPods 0.36 adds supports for Swift and embedded frameworks. You can install it with the following command:
+
+```
+$ gem install cocoapods
+```
+
+To integrate GDGeoData into your Xcode project using CocoaPods, specify it in your Podfile:
+
+```
+pod 'GDGeoData', '~> 0.1'
+```
+
+Then, run the following command:
+
+```
+$ pod install
+```
 
 ## Author
 
