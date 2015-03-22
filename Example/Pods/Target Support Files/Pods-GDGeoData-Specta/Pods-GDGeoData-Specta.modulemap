@@ -1,6 +1,0 @@
-framework module Specta {
-  umbrella header "Pods-GDGeoData-Specta-umbrella.h"
-
-  export *
-  module * { export * }
-}

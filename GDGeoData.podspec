@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "GDGeoData"
-  s.version          = "0.1.4"
+  s.version          = "0.1.5"
   s.summary          = "Swift wrapper for easy use of countries and regiones with ISO codes"
   s.description      = <<-DESC
                         Swift wrapper for easy use of country and region data from https://github.com/knutigro/ISO-3166-Countries-with-Regional-Codes
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/knutigro/GDGeoData"
   s.license          = 'MIT'
   s.author           = { "Knut Inge Grosland" => "”hei@knutinge.com”" }
-  s.source           = { :git => "https://github.com/knutigro/GDGeoData.git", :tag => "0.1.4" }
+  s.source           = { :git => "https://github.com/knutigro/GDGeoData.git", :tag => "0.1.5" }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
