@@ -60,7 +60,7 @@ class GDGeoDataTests: XCTestCase {
     }
 
     func testRegionLoadedByName() {
-        if let region = GDRegion(regionName: "Oceania") {
+        if let region = GDRegion(name: "Oceania") {
             println("testRegionLoadedByName \(region.description)")
             XCTAssertTrue(region.code == "009", "Oceania should have code 009")
         } else {
@@ -77,7 +77,7 @@ class GDGeoDataTests: XCTestCase {
     }
 
     func testRegionHaveArrayOfCountries() {
-        if let region = GDRegion(regionName: "Europe") {
+        if let region = GDRegion(name: "Europe") {
             XCTAssertGreaterThan(region.countries.count, 0, "Europe should have array of countries greater than 0")
         } else {
             XCTAssertTrue(false, "Europe should be loaded by name")
@@ -85,7 +85,7 @@ class GDGeoDataTests: XCTestCase {
     }
 
     func testRegionHaveArrayOfSubRegions() {
-        if let region = GDRegion(regionName: "Europe") {
+        if let region = GDRegion(name: "Europe") {
             XCTAssertGreaterThan(region.subRegions.count, 0, "Europe should have array of subRegions greater than 0")
         } else {
             XCTAssertTrue(false, "Europe should be loaded by name")
@@ -95,8 +95,8 @@ class GDGeoDataTests: XCTestCase {
     // MARK: GDSubRegion
 
     func testSubRegionByRegionAndSubRegionCode() {
-        if let region = GDRegion(regionName: "Oceania") {
-            if let subRegion = GDSubRegion(region: region, subRegionCode: "057") {
+        if let region = GDRegion(name: "Oceania") {
+            if let subRegion = GDSubRegion(code: "057", region: region) {
                 println("testSubRegionByRegionAndSubRegionCode \(subRegion.description)")
                 XCTAssertTrue(subRegion.name == "Micronesia", "Micronesia should be loaded with Oceania and code 057")
             } else {
@@ -108,7 +108,7 @@ class GDGeoDataTests: XCTestCase {
     }
     
     func testSubRegionByRegionAndSubRegionName() {
-        if let subRegion = GDSubRegion(regionName: "Oceania", subRegionName: "Micronesia") {
+        if let subRegion = GDSubRegion(name: "Micronesia", regionName: "Oceania") {
             XCTAssertTrue(subRegion.code == "057", "Micronesia have code code 057")
         } else {
             XCTAssertTrue(false, "Micronesia should be loaded with Oceania and Micronesia")

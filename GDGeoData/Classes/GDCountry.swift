@@ -87,10 +87,10 @@ let kGDCountryJSONFilePath = "GDCountries"
         self.regionCode = dictionary[kRegionCode] as? String
         self.subRegionCode = dictionary[kSubRegionCode] as? String
         if let regionCode = self.regionCode {
-            self.region = GDRegion(regionCode: regionCode)
+            self.region = GDRegion(code: regionCode)
             if let region = self.region {
                 if let subRegionCode = self.subRegionCode {
-                    self.subRegion = GDSubRegion(region: region, subRegionCode: subRegionCode)
+                    self.subRegion = GDSubRegion(code: subRegionCode, region: region)
                 }
             }
         }
@@ -137,10 +137,10 @@ let kGDCountryJSONFilePath = "GDCountries"
         self.init(country: tempCountry)
     }
 
-    public convenience init?(countryCode: String) {
+    public convenience init?(code: String) {
         var tempCountry : GDCountry?
         for country in GDCountry.countries {
-            if (country.code?.lowercaseString == countryCode.lowercaseString) { tempCountry = country; break }
+            if (country.code?.lowercaseString == code.lowercaseString) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
     }

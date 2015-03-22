@@ -77,18 +77,18 @@ let kGDRegionJSONFilePath = "GDRegions"
         }
     }
     
-    public convenience init?(regionName: String) {
+    public convenience init?(name: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.regions {
-            if (region.name?.lowercaseString == regionName.lowercaseString) { tempRegion = region; break }
+            if (region.name?.lowercaseString == name.lowercaseString) { tempRegion = region; break }
         }
         self.init(region: tempRegion)
     }
 
-    public convenience init?(regionCode: String) {
+    public convenience init?(code: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.regions {
-            if (region.code?.lowercaseString == regionCode.lowercaseString) { tempRegion = region; break }
+            if (region.code?.lowercaseString == code.lowercaseString) { tempRegion = region; break }
         }
         self.init(region: tempRegion)
     }

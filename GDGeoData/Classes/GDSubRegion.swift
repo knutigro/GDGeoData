@@ -49,38 +49,38 @@ let kSubRegionName = "name"
         }
     }
     
-    public convenience init?(regionName: String, subRegionName: String) {
+    public convenience init?(name: String, regionName: String) {
         var tempSubRegion : GDSubRegion?
-        if let region = GDRegion(regionName: regionName) {
+        if let region = GDRegion(name: regionName) {
             for subRegion in region.subRegions {
-                if (subRegion.name?.lowercaseString == subRegionName.lowercaseString) { tempSubRegion = subRegion; break }
+                if (subRegion.name?.lowercaseString == name.lowercaseString) { tempSubRegion = subRegion; break }
             }
         }
         self.init(subRegion: tempSubRegion)
     }
     
-    public convenience init?(regionCode: String, subRegionCode: String) {
+    public convenience init?(code: String, regionCode: String) {
         var tempSubRegion : GDSubRegion?
-        if let region = GDRegion(regionCode: regionCode) {
+        if let region = GDRegion(code: regionCode) {
             for subRegion in region.subRegions {
-                if (subRegion.code?.lowercaseString == subRegionCode.lowercaseString) { tempSubRegion = subRegion; break }
+                if (subRegion.code?.lowercaseString == code.lowercaseString) { tempSubRegion = subRegion; break }
             }
         }
         self.init(subRegion: tempSubRegion)
     }
     
-    public convenience init?(region: GDRegion, subRegionCode: String) {
+    public convenience init?(code: String, region: GDRegion) {
         var tempSubRegion : GDSubRegion?
         for subRegion in region.subRegions {
-            if (subRegion.code?.lowercaseString == subRegionCode.lowercaseString) { tempSubRegion = subRegion; break }
+            if (subRegion.code?.lowercaseString == code.lowercaseString) { tempSubRegion = subRegion; break }
         }
         self.init(subRegion: tempSubRegion)
     }
     
-    public convenience init?(region: GDRegion, subRegionName: String) {
+    public convenience init?(name: String, region: GDRegion) {
         var tempSubRegion : GDSubRegion?
         for subRegion in region.subRegions {
-            if (subRegion.name?.lowercaseString == subRegionName.lowercaseString) { tempSubRegion = subRegion; break }
+            if (subRegion.name?.lowercaseString == name.lowercaseString) { tempSubRegion = subRegion; break }
         }
         self.init(subRegion: tempSubRegion)
     }
