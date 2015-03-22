@@ -115,7 +115,7 @@ let kGDCountryJSONFilePath = "GDCountries"
 
     public convenience init?(name: String) {
         var tempCountry : GDCountry?
-        for country in GDCountry.allCountries {
+        for country in GDCountry.countries {
             if (country.name?.lowercaseString == name.lowercaseString) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
@@ -123,7 +123,7 @@ let kGDCountryJSONFilePath = "GDCountries"
     
     convenience init?(alpha2: String) {
         var tempCountry : GDCountry?
-        for country in GDCountry.allCountries {
+        for country in GDCountry.countries {
             if (country.alpha2?.lowercaseString == alpha2.lowercaseString) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
@@ -131,7 +131,7 @@ let kGDCountryJSONFilePath = "GDCountries"
     
     public convenience init?(alpha3: String) {
         var tempCountry : GDCountry?
-        for country in GDCountry.allCountries {
+        for country in GDCountry.countries {
             if (country.alpha3?.lowercaseString == alpha3.lowercaseString) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
@@ -139,7 +139,7 @@ let kGDCountryJSONFilePath = "GDCountries"
 
     public convenience init?(countryCode: String) {
         var tempCountry : GDCountry?
-        for country in GDCountry.allCountries {
+        for country in GDCountry.countries {
             if (country.code?.lowercaseString == countryCode.lowercaseString) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
@@ -147,7 +147,7 @@ let kGDCountryJSONFilePath = "GDCountries"
     
     public convenience init?(iso_3166_2: String) {
         var tempCountry : GDCountry?
-        for country in GDCountry.allCountries {
+        for country in GDCountry.countries {
             if (country.iso_3166_2?.lowercaseString == iso_3166_2.lowercaseString) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
@@ -155,7 +155,7 @@ let kGDCountryJSONFilePath = "GDCountries"
     
     // MARK:  Public methods
 
-    public class var allCountries: [GDCountry] {
+    public class var countries: [GDCountry] {
         get {
             struct Static {
                 static var countryArrayInstance : [GDCountry]? = nil

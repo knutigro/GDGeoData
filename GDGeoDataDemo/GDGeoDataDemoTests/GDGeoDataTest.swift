@@ -25,7 +25,7 @@ class GDGeoDataTests: XCTestCase {
     // MARK: GDCountry
     
     func testAllCountries() {
-        XCTAssertGreaterThan(GDCountry.allCountries.count, 0, "AllCountries should be grater than 0")
+        XCTAssertGreaterThan(GDCountry.countries.count, 0, "AllCountries should be grater than 0")
     }
 
     func testCountryLoadedByName() {
@@ -56,7 +56,7 @@ class GDGeoDataTests: XCTestCase {
     // MARK: GDRegion
     
     func testAllRegions() {
-        XCTAssertGreaterThan(GDRegion.allRegions.count, 0, "Allregions should be grater than 0")
+        XCTAssertGreaterThan(GDRegion.regions.count, 0, "Allregions should be grater than 0")
     }
 
     func testRegionLoadedByName() {

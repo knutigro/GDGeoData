@@ -79,7 +79,7 @@ let kGDRegionJSONFilePath = "GDRegions"
     
     public convenience init?(regionName: String) {
         var tempRegion : GDRegion?
-        for region in GDRegion.allRegions {
+        for region in GDRegion.regions {
             if (region.name?.lowercaseString == regionName.lowercaseString) { tempRegion = region; break }
         }
         self.init(region: tempRegion)
@@ -87,7 +87,7 @@ let kGDRegionJSONFilePath = "GDRegions"
 
     public convenience init?(regionCode: String) {
         var tempRegion : GDRegion?
-        for region in GDRegion.allRegions {
+        for region in GDRegion.regions {
             if (region.code?.lowercaseString == regionCode.lowercaseString) { tempRegion = region; break }
         }
         self.init(region: tempRegion)
@@ -95,7 +95,7 @@ let kGDRegionJSONFilePath = "GDRegions"
     
     public convenience init?(subRegionCode: String) {
         var tempRegion : GDRegion?
-        for region in GDRegion.allRegions {
+        for region in GDRegion.regions {
             for subRegion in region.subRegions {
                 if (subRegion.code?.lowercaseString == subRegionCode.lowercaseString) { tempRegion = region; break }
             }
@@ -105,7 +105,7 @@ let kGDRegionJSONFilePath = "GDRegions"
     
     public convenience init?(subRegionName: String) {
         var tempRegion : GDRegion?
-        for region in GDRegion.allRegions {
+        for region in GDRegion.regions {
             for subRegion in region.subRegions {
                 if (subRegion.name?.lowercaseString == subRegionName.lowercaseString) { tempRegion = region; break }
             }
@@ -113,7 +113,7 @@ let kGDRegionJSONFilePath = "GDRegions"
         self.init(region: tempRegion)
     }
     
-    public class var allRegions: [GDRegion] {
+    public class var regions: [GDRegion] {
         get {
             struct Static {
                 static var regionArrayInstance : [GDRegion]? = nil
@@ -150,7 +150,7 @@ let kGDRegionJSONFilePath = "GDRegions"
     public var countries : [GDCountry]{
         get {
             var countries = [GDCountry]()
-            for country in GDCountry.allCountries {
+            for country in GDCountry.countries {
                 if (country.regionCode?.lowercaseString == self.code?.lowercaseString) {
                     countries.append(country)
                 }

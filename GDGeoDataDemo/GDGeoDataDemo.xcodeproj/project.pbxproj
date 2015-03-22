@@ -11,6 +11,7 @@
 		49A7FE6D1ABF40D600473BCF /* GDSubRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7FE6C1ABF40D600473BCF /* GDSubRegion.swift */; };
 		49A7FE6E1ABF456700473BCF /* GDSubRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7FE6C1ABF40D600473BCF /* GDSubRegion.swift */; };
 		49A7FE6F1ABF456A00473BCF /* GDGeoDataObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7FE6A1ABF3F3400473BCF /* GDGeoDataObjectProtocol.swift */; };
+		49A7FE711ABF4F3900473BCF /* GDGeoDataDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7FE701ABF4F3900473BCF /* GDGeoDataDataSource.swift */; };
 		49FEF1381ABCB01300E75579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1371ABCB01300E75579 /* AppDelegate.swift */; };
 		49FEF13D1ABCB01300E75579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF13B1ABCB01300E75579 /* Main.storyboard */; };
 		49FEF13F1ABCB01300E75579 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF13E1ABCB01300E75579 /* Images.xcassets */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		49A7FE6A1ABF3F3400473BCF /* GDGeoDataObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataObjectProtocol.swift; sourceTree = "<group>"; };
 		49A7FE6C1ABF40D600473BCF /* GDSubRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDSubRegion.swift; sourceTree = "<group>"; };
+		49A7FE701ABF4F3900473BCF /* GDGeoDataDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataDataSource.swift; sourceTree = "<group>"; };
 		49FEF1321ABCB01300E75579 /* GDGeoDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDGeoDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FEF1361ABCB01300E75579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FEF1371ABCB01300E75579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				49FEF1571ABD8B4600E75579 /* GDGeoData */,
 				49FEF1371ABCB01300E75579 /* AppDelegate.swift */,
+				49A7FE701ABF4F3900473BCF /* GDGeoDataDataSource.swift */,
 				49FEF16E1ABD8CEA00E75579 /* GDGeoDataListViewController.swift */,
 				49FEF1701ABD920500E75579 /* GDGeoDataDetailViewController.swift */,
 				49FEF13B1ABCB01300E75579 /* Main.storyboard */,
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A7FE6B1ABF3F3400473BCF /* GDGeoDataObjectProtocol.swift in Sources */,
+				49A7FE711ABF4F3900473BCF /* GDGeoDataDataSource.swift in Sources */,
 				49FEF1711ABD920500E75579 /* GDGeoDataDetailViewController.swift in Sources */,
 				49FEF1661ABD8B4600E75579 /* GDRegion.swift in Sources */,
 				49FEF16F1ABD8CEA00E75579 /* GDGeoDataListViewController.swift in Sources */,

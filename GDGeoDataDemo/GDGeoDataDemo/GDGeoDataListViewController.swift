@@ -8,58 +8,46 @@
 
 import UIKit
 
-class GDGeoDataListViewController: UITableViewController {
+class GDGeoDataListViewController: UITableViewController, UITableViewDelegate {
     
-    var items = [GDCountry]()
-
+    var geoDataSource : GDGeoDataDataSource? {
+        didSet {
+            self.tableView.dataSource = geoDataSource
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.items = GDCountry.allCountries
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
-    }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-
-        let country = self.items[indexPath.row]
-        
-        if let name = country.name {
-            cell.textLabel?.text = name
+        // Default configuration
+        if (self.geoDataSource == nil) {
+            self.geoDataSource = GDGeoDataDataSource()
         }
-
-        return cell
     }
-    
+
     // MARK:  UITableViewDelegate Methods
+
     override  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let cell = tableView .cellForRowAtIndexPath(indexPath)
-        let country = self.items[indexPath.row]
-        
-        self.performSegueWithIdentifier("showDetailSegue", sender: country)
+
+        if let dataSource = self.tableView.dataSource as? GDGeoDataDataSource {
+            let cell = tableView .cellForRowAtIndexPath(indexPath)
+            
+            if let region = dataSource.items[indexPath.row] as? GDRegion {
+                if let listViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataListViewController") as? GDGeoDataListViewController {
+                    listViewController.geoDataSource = GDGeoDataDataSource(region: region)
+                    self.navigationController?.pushViewController(listViewController, animated: true)
+                }
+            } else if let subRegion = dataSource.items[indexPath.row] as? GDSubRegion {
+                if let listViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataListViewController") as? GDGeoDataListViewController {
+                    listViewController.geoDataSource = GDGeoDataDataSource(subRegion: subRegion)
+                    self.navigationController?.pushViewController(listViewController, animated: true)
+                }
+            } else if let country = dataSource.items[indexPath.row] as? GDCountry {
+                if let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataDetailViewController") as? GDGeoDataDetailViewController {
+                    detailViewController.geoObject = country
+                    self.navigationController?.pushViewController(detailViewController, animated: true)
+                }
+            }
+        }
     }
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        var detailViewController = segue.destinationViewController as GDGeoDataDetailViewController
-        detailViewController.geoObject = sender as? GDGeoDataObjectProtocol
-    }
-
 }

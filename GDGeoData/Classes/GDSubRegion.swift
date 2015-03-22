@@ -89,7 +89,7 @@ let kSubRegionName = "name"
     public var countries : [GDCountry] {
         get {
             var countries = [GDCountry]()
-            for country in GDCountry.allCountries {
+            for country in GDCountry.countries {
                 if (country.subRegionCode?.lowercaseString == self.code?.lowercaseString) {
                     countries.append(country)
                 }

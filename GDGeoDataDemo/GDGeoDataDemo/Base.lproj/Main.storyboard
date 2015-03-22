@@ -8,7 +8,7 @@
         <!--GDGeoData-->
         <scene sceneID="v38-p5-FDo">
             <objects>
-                <tableViewController id="MUh-df-T6D" customClass="GDGeoDataListViewController" customModule="GDGeoDataDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GDGeoDataListViewController" id="MUh-df-T6D" customClass="GDGeoDataListViewController" customModule="GDGeoDataDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2wq-m1-zwT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
         <!--Geo Data Detail View Controller-->
         <scene sceneID="Ehg-gt-ROu">
             <objects>
-                <viewController id="bUq-8X-9j3" customClass="GDGeoDataDetailViewController" customModule="GDGeoDataDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GDGeoDataDetailViewController" id="bUq-8X-9j3" customClass="GDGeoDataDetailViewController" customModule="GDGeoDataDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bIl-3D-OAa"/>
                         <viewControllerLayoutGuide type="bottom" id="yNB-DN-AQX"/>
