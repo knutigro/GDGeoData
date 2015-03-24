@@ -195,7 +195,7 @@ let kGDCountryJSONFilePath = "GDCountries"
         if let bundleUrl = NSBundle(forClass: self).URLForResource("GDGeoData", withExtension: "bundle") {
             bundle = NSBundle(URL: bundleUrl)
         } else {
-            NSBundle.mainBundle()
+            bundle = NSBundle.mainBundle()
         }
         
         return bundle
