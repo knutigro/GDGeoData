@@ -165,8 +165,10 @@ let kGDCountryJSONFilePath = "GDCountries"
 
             dispatch_once(&Static.countryOnceToken) {
                 var error:NSError?
-                var bundle = NSBundle(forClass: self)
-                if let path = bundle.pathForResource(kGDCountryJSONFilePath, ofType: "json") {
+                
+                var bundle = GDCountry.bundle()
+
+                if let path = bundle?.pathForResource(kGDCountryJSONFilePath, ofType: "json") {
                     if let data = NSData(contentsOfFile: path) {
                         if let json:AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error:&error) {
                             // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
@@ -186,6 +188,17 @@ let kGDCountryJSONFilePath = "GDCountries"
             
             return Static.countryArrayInstance!
         }
+    }
+    
+    public class func bundle() -> NSBundle? {
+        var bundle : NSBundle?
+        if let bundleUrl = NSBundle(forClass: self).URLForResource("GDGeoData", withExtension: "bundle") {
+            bundle = NSBundle(URL: bundleUrl)
+        } else {
+            NSBundle.mainBundle()
+        }
+        
+        return bundle
     }
 
 }

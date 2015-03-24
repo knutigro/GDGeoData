@@ -122,9 +122,10 @@ let kGDRegionJSONFilePath = "GDRegions"
             var regionArrayTemp = [GDRegion]()
             dispatch_once(&Static.regionOnceToken) {
                 var error:NSError?
-                var bundle = NSBundle(forClass: self)
+                
+                var bundle = GDCountry.bundle()
 
-                if let path = bundle.pathForResource(kGDRegionJSONFilePath, ofType: "json") {
+                if let path = bundle?.pathForResource(kGDRegionJSONFilePath, ofType: "json") {
                     if let data = NSData(contentsOfFile: path) {
                         if let json:AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error:&error) {
                             // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
