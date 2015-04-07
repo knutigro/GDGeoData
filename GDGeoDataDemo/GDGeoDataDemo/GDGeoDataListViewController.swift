@@ -35,16 +35,19 @@ class GDGeoDataListViewController: UITableViewController, UITableViewDelegate {
             if let region = dataSource.items[indexPath.row] as? GDRegion {
                 if let listViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataListViewController") as? GDGeoDataListViewController {
                     listViewController.geoDataSource = GDGeoDataDataSource(region: region)
+                    listViewController.title = region.name
                     self.navigationController?.pushViewController(listViewController, animated: true)
                 }
             } else if let subRegion = dataSource.items[indexPath.row] as? GDSubRegion {
                 if let listViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataListViewController") as? GDGeoDataListViewController {
                     listViewController.geoDataSource = GDGeoDataDataSource(subRegion: subRegion)
+                    listViewController.title = subRegion.name
                     self.navigationController?.pushViewController(listViewController, animated: true)
                 }
             } else if let country = dataSource.items[indexPath.row] as? GDCountry {
                 if let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataDetailViewController") as? GDGeoDataDetailViewController {
                     detailViewController.geoObject = country
+                    detailViewController.title = country.name
                     self.navigationController?.pushViewController(detailViewController, animated: true)
                 }
             }
