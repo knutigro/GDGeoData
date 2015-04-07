@@ -95,7 +95,7 @@ let kSubRegionName = "name"
                 }
             }
             
-            return countries;
+            return countries
         }
     }
 }

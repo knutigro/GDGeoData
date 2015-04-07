@@ -156,7 +156,7 @@ let kGDRegionJSONFilePath = "GDRegions"
                     countries.append(country)
                 }
             }
-            return countries;
+            return countries
         }
     }
 }
