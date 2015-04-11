@@ -22,7 +22,6 @@
 		49FEF1661ABD8B4600E75579 /* GDRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1601ABD8B4600E75579 /* GDRegion.swift */; };
 		49FEF16B1ABD8BEA00E75579 /* GDGeoData.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF1681ABD8BEA00E75579 /* GDGeoData.podspec */; };
 		49FEF16C1ABD8BEA00E75579 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF1691ABD8BEA00E75579 /* LICENSE */; };
-		49FEF16D1ABD8BEA00E75579 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF16A1ABD8BEA00E75579 /* README.md */; };
 		49FEF16F1ABD8CEA00E75579 /* GDGeoDataListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF16E1ABD8CEA00E75579 /* GDGeoDataListViewController.swift */; };
 		49FEF1711ABD920500E75579 /* GDGeoDataDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1701ABD920500E75579 /* GDGeoDataDetailViewController.swift */; };
 		49FEF1751ABDABC200E75579 /* GDGeoDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1741ABDABC200E75579 /* GDGeoDataTest.swift */; };
@@ -295,7 +294,6 @@
 				49FEF1711ABD920500E75579 /* GDGeoDataDetailViewController.swift in Sources */,
 				49FEF1661ABD8B4600E75579 /* GDRegion.swift in Sources */,
 				49FEF16F1ABD8CEA00E75579 /* GDGeoDataListViewController.swift in Sources */,
-				49FEF16D1ABD8BEA00E75579 /* README.md in Sources */,
 				49A7FE6D1ABF40D600473BCF /* GDSubRegion.swift in Sources */,
 				49FEF1381ABCB01300E75579 /* AppDelegate.swift in Sources */,
 				49FEF1651ABD8B4600E75579 /* GDCountry.swift in Sources */,
