@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		497DF33F1AF21F1E00EDE48D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497DF33E1AF21F1E00EDE48D /* AppDelegate.swift */; };
+		497DF3431AF21F1E00EDE48D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 497DF3421AF21F1E00EDE48D /* Images.xcassets */; };
+		497DF3461AF21F1E00EDE48D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497DF3441AF21F1E00EDE48D /* Main.storyboard */; };
+		497DF3521AF21F1E00EDE48D /* GDGeoDataOSXDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497DF3511AF21F1E00EDE48D /* GDGeoDataOSXDemoTests.swift */; };
+		497DF3621AF21F5400EDE48D /* GDCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 497DF35B1AF21F5400EDE48D /* GDCountries.json */; };
+		497DF3631AF21F5400EDE48D /* GDRegions.json in Resources */ = {isa = PBXBuildFile; fileRef = 497DF35C1AF21F5400EDE48D /* GDRegions.json */; };
+		497DF3641AF21F5400EDE48D /* GDCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497DF35E1AF21F5400EDE48D /* GDCountry.swift */; };
+		497DF3651AF21F5400EDE48D /* GDGeoDataObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497DF35F1AF21F5400EDE48D /* GDGeoDataObjectProtocol.swift */; };
+		497DF3661AF21F5400EDE48D /* GDRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497DF3601AF21F5400EDE48D /* GDRegion.swift */; };
+		497DF3671AF21F5400EDE48D /* GDSubRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497DF3611AF21F5400EDE48D /* GDSubRegion.swift */; };
+		497DF36B1AF2203500EDE48D /* GDGeoDataDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497DF3681AF2203500EDE48D /* GDGeoDataDataSource.swift */; };
+		497DF36D1AF2203500EDE48D /* GDGeoDataListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497DF36A1AF2203500EDE48D /* GDGeoDataListViewController.swift */; };
 		49A7FE6B1ABF3F3400473BCF /* GDGeoDataObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7FE6A1ABF3F3400473BCF /* GDGeoDataObjectProtocol.swift */; };
 		49A7FE6D1ABF40D600473BCF /* GDSubRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7FE6C1ABF40D600473BCF /* GDSubRegion.swift */; };
 		49A7FE6E1ABF456700473BCF /* GDSubRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7FE6C1ABF40D600473BCF /* GDSubRegion.swift */; };
@@ -32,6 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		497DF34C1AF21F1E00EDE48D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49FEF12A1ABCB01300E75579 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 497DF3391AF21F1D00EDE48D;
+			remoteInfo = GDGeoDataOSXDemo;
+		};
 		49FEF1481ABCB01300E75579 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49FEF12A1ABCB01300E75579 /* Project object */;
@@ -42,6 +61,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		497DF33A1AF21F1D00EDE48D /* GDGeoDataOSXDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDGeoDataOSXDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		497DF33D1AF21F1E00EDE48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		497DF33E1AF21F1E00EDE48D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		497DF3421AF21F1E00EDE48D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		497DF3451AF21F1E00EDE48D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		497DF34B1AF21F1E00EDE48D /* GDGeoDataOSXDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDGeoDataOSXDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		497DF3501AF21F1E00EDE48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		497DF3511AF21F1E00EDE48D /* GDGeoDataOSXDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDGeoDataOSXDemoTests.swift; sourceTree = "<group>"; };
+		497DF35B1AF21F5400EDE48D /* GDCountries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDCountries.json; sourceTree = "<group>"; };
+		497DF35C1AF21F5400EDE48D /* GDRegions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GDRegions.json; sourceTree = "<group>"; };
+		497DF35E1AF21F5400EDE48D /* GDCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDCountry.swift; sourceTree = "<group>"; };
+		497DF35F1AF21F5400EDE48D /* GDGeoDataObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataObjectProtocol.swift; sourceTree = "<group>"; };
+		497DF3601AF21F5400EDE48D /* GDRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDRegion.swift; sourceTree = "<group>"; };
+		497DF3611AF21F5400EDE48D /* GDSubRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDSubRegion.swift; sourceTree = "<group>"; };
+		497DF3681AF2203500EDE48D /* GDGeoDataDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataDataSource.swift; sourceTree = "<group>"; };
+		497DF36A1AF2203500EDE48D /* GDGeoDataListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataListViewController.swift; sourceTree = "<group>"; };
 		49A7FE6A1ABF3F3400473BCF /* GDGeoDataObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataObjectProtocol.swift; sourceTree = "<group>"; };
 		49A7FE6C1ABF40D600473BCF /* GDSubRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDSubRegion.swift; sourceTree = "<group>"; };
 		49A7FE701ABF4F3900473BCF /* GDGeoDataDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataDataSource.swift; sourceTree = "<group>"; };
@@ -66,6 +101,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		497DF3371AF21F1D00EDE48D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497DF3481AF21F1E00EDE48D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49FEF12F1ABCB01300E75579 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,12 +132,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		497DF33B1AF21F1E00EDE48D /* GDGeoDataOSXDemo */ = {
+			isa = PBXGroup;
+			children = (
+				497DF3591AF21F5400EDE48D /* GDGeoData */,
+				497DF33E1AF21F1E00EDE48D /* AppDelegate.swift */,
+				497DF3681AF2203500EDE48D /* GDGeoDataDataSource.swift */,
+				497DF36A1AF2203500EDE48D /* GDGeoDataListViewController.swift */,
+				497DF3421AF21F1E00EDE48D /* Images.xcassets */,
+				497DF3441AF21F1E00EDE48D /* Main.storyboard */,
+				497DF33C1AF21F1E00EDE48D /* Supporting Files */,
+			);
+			path = GDGeoDataOSXDemo;
+			sourceTree = "<group>";
+		};
+		497DF33C1AF21F1E00EDE48D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				497DF33D1AF21F1E00EDE48D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		497DF34E1AF21F1E00EDE48D /* GDGeoDataOSXDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				497DF3511AF21F1E00EDE48D /* GDGeoDataOSXDemoTests.swift */,
+				497DF34F1AF21F1E00EDE48D /* Supporting Files */,
+			);
+			path = GDGeoDataOSXDemoTests;
+			sourceTree = "<group>";
+		};
+		497DF34F1AF21F1E00EDE48D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				497DF3501AF21F1E00EDE48D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		497DF3591AF21F5400EDE48D /* GDGeoData */ = {
+			isa = PBXGroup;
+			children = (
+				497DF35A1AF21F5400EDE48D /* Assets */,
+				497DF35D1AF21F5400EDE48D /* Classes */,
+			);
+			name = GDGeoData;
+			path = ../../GDGeoData;
+			sourceTree = "<group>";
+		};
+		497DF35A1AF21F5400EDE48D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				497DF35B1AF21F5400EDE48D /* GDCountries.json */,
+				497DF35C1AF21F5400EDE48D /* GDRegions.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		497DF35D1AF21F5400EDE48D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				497DF35E1AF21F5400EDE48D /* GDCountry.swift */,
+				497DF35F1AF21F5400EDE48D /* GDGeoDataObjectProtocol.swift */,
+				497DF3601AF21F5400EDE48D /* GDRegion.swift */,
+				497DF3611AF21F5400EDE48D /* GDSubRegion.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		49FEF1291ABCB01300E75579 = {
 			isa = PBXGroup;
 			children = (
 				49FEF1671ABD8BC700E75579 /* Podspec Metadata */,
 				49FEF1341ABCB01300E75579 /* GDGeoDataDemo */,
 				49FEF14A1ABCB01300E75579 /* GDGeoDataDemoTests */,
+				497DF33B1AF21F1E00EDE48D /* GDGeoDataOSXDemo */,
+				497DF34E1AF21F1E00EDE48D /* GDGeoDataOSXDemoTests */,
 				49FEF1331ABCB01300E75579 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +218,8 @@
 			children = (
 				49FEF1321ABCB01300E75579 /* GDGeoDataDemo.app */,
 				49FEF1471ABCB01300E75579 /* GDGeoDataDemoTests.xctest */,
+				497DF33A1AF21F1D00EDE48D /* GDGeoDataOSXDemo.app */,
+				497DF34B1AF21F1E00EDE48D /* GDGeoDataOSXDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +308,41 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		497DF3391AF21F1D00EDE48D /* GDGeoDataOSXDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 497DF3571AF21F1E00EDE48D /* Build configuration list for PBXNativeTarget "GDGeoDataOSXDemo" */;
+			buildPhases = (
+				497DF3361AF21F1D00EDE48D /* Sources */,
+				497DF3371AF21F1D00EDE48D /* Frameworks */,
+				497DF3381AF21F1D00EDE48D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GDGeoDataOSXDemo;
+			productName = GDGeoDataOSXDemo;
+			productReference = 497DF33A1AF21F1D00EDE48D /* GDGeoDataOSXDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		497DF34A1AF21F1E00EDE48D /* GDGeoDataOSXDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 497DF3581AF21F1E00EDE48D /* Build configuration list for PBXNativeTarget "GDGeoDataOSXDemoTests" */;
+			buildPhases = (
+				497DF3471AF21F1E00EDE48D /* Sources */,
+				497DF3481AF21F1E00EDE48D /* Frameworks */,
+				497DF3491AF21F1E00EDE48D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				497DF34D1AF21F1E00EDE48D /* PBXTargetDependency */,
+			);
+			name = GDGeoDataOSXDemoTests;
+			productName = GDGeoDataOSXDemoTests;
+			productReference = 497DF34B1AF21F1E00EDE48D /* GDGeoDataOSXDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		49FEF1311ABCB01300E75579 /* GDGeoDataDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49FEF1511ABCB01300E75579 /* Build configuration list for PBXNativeTarget "GDGeoDataDemo" */;
@@ -230,6 +387,13 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = Cocmoc;
 				TargetAttributes = {
+					497DF3391AF21F1D00EDE48D = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					497DF34A1AF21F1E00EDE48D = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 497DF3391AF21F1D00EDE48D;
+					};
 					49FEF1311ABCB01300E75579 = {
 						CreatedOnToolsVersion = 6.2;
 					};
@@ -254,11 +418,31 @@
 			targets = (
 				49FEF1311ABCB01300E75579 /* GDGeoDataDemo */,
 				49FEF1461ABCB01300E75579 /* GDGeoDataDemoTests */,
+				497DF3391AF21F1D00EDE48D /* GDGeoDataOSXDemo */,
+				497DF34A1AF21F1E00EDE48D /* GDGeoDataOSXDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		497DF3381AF21F1D00EDE48D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				497DF3631AF21F5400EDE48D /* GDRegions.json in Resources */,
+				497DF3431AF21F1E00EDE48D /* Images.xcassets in Resources */,
+				497DF3461AF21F1E00EDE48D /* Main.storyboard in Resources */,
+				497DF3621AF21F5400EDE48D /* GDCountries.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497DF3491AF21F1E00EDE48D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49FEF1301ABCB01300E75579 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -285,6 +469,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		497DF3361AF21F1D00EDE48D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				497DF3661AF21F5400EDE48D /* GDRegion.swift in Sources */,
+				497DF3671AF21F5400EDE48D /* GDSubRegion.swift in Sources */,
+				497DF3651AF21F5400EDE48D /* GDGeoDataObjectProtocol.swift in Sources */,
+				497DF33F1AF21F1E00EDE48D /* AppDelegate.swift in Sources */,
+				497DF3641AF21F5400EDE48D /* GDCountry.swift in Sources */,
+				497DF36D1AF2203500EDE48D /* GDGeoDataListViewController.swift in Sources */,
+				497DF36B1AF2203500EDE48D /* GDGeoDataDataSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		497DF3471AF21F1E00EDE48D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				497DF3521AF21F1E00EDE48D /* GDGeoDataOSXDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49FEF12E1ABCB01300E75579 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +521,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		497DF34D1AF21F1E00EDE48D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 497DF3391AF21F1D00EDE48D /* GDGeoDataOSXDemo */;
+			targetProxy = 497DF34C1AF21F1E00EDE48D /* PBXContainerItemProxy */;
+		};
 		49FEF1491ABCB01300E75579 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 49FEF1311ABCB01300E75579 /* GDGeoDataDemo */;
@@ -323,6 +534,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		497DF3441AF21F1E00EDE48D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				497DF3451AF21F1E00EDE48D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		49FEF13B1ABCB01300E75579 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -342,6 +561,86 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		497DF3531AF21F1E00EDE48D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GDGeoDataOSXDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		497DF3541AF21F1E00EDE48D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = GDGeoDataOSXDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		497DF3551AF21F1E00EDE48D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GDGeoDataOSXDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDGeoDataOSXDemo.app/Contents/MacOS/GDGeoDataOSXDemo";
+			};
+			name = Debug;
+		};
+		497DF3561AF21F1E00EDE48D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = GDGeoDataOSXDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDGeoDataOSXDemo.app/Contents/MacOS/GDGeoDataOSXDemo";
+			};
+			name = Release;
+		};
 		49FEF14F1ABCB01300E75579 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -478,6 +777,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		497DF3571AF21F1E00EDE48D /* Build configuration list for PBXNativeTarget "GDGeoDataOSXDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				497DF3531AF21F1E00EDE48D /* Debug */,
+				497DF3541AF21F1E00EDE48D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		497DF3581AF21F1E00EDE48D /* Build configuration list for PBXNativeTarget "GDGeoDataOSXDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				497DF3551AF21F1E00EDE48D /* Debug */,
+				497DF3561AF21F1E00EDE48D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		49FEF12D1ABCB01300E75579 /* Build configuration list for PBXProject "GDGeoDataDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
