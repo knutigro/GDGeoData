@@ -65,9 +65,10 @@ class GDGeoDataListViewController: NSViewController, NSTableViewDelegate {
     
     func tableViewSelectionDidChange(aNotification: NSNotification) {
         if let tableView = aNotification.object as? NSTableView {
-            
             let index = tableView.selectedRow
 
+            if index == -1 { return   }
+            
             if tableView == self.regionTableView {
                 if let region = self.regionDataSource?.items[index] as? GDRegion {
                     if index == 0 {
