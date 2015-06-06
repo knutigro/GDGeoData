@@ -1,4 +1,4 @@
+osx_image: beta-xcode6.3
 language: objective-c
 before_script: travis/before_script.sh
-osx_image: beta-xcode6.3
 script: travis/script.sh
