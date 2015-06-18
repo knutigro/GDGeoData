@@ -38,7 +38,7 @@ class GDGeoDataDataSource : NSObject, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
         if let geoDataObject = self.items[indexPath.row] as? GDGeoDataObjectProtocol {
             if let name = geoDataObject.name {

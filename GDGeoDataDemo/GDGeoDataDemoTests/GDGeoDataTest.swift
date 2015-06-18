@@ -30,7 +30,7 @@ class GDGeoDataTests: XCTestCase {
 
     func testCountryLoadedByName() {
         if let norway = GDCountry(name: "Norway") {
-            println("testCountryLoadedByName \(norway.description)")
+            print("testCountryLoadedByName \(norway.description)")
             XCTAssertTrue(norway.alpha2 == "NO", "Norway should have alpha2 NO")
         } else {
             XCTAssertTrue(false, "Norway should be loaded by name")
@@ -61,7 +61,7 @@ class GDGeoDataTests: XCTestCase {
 
     func testRegionLoadedByName() {
         if let region = GDRegion(name: "Oceania") {
-            println("testRegionLoadedByName \(region.description)")
+            print("testRegionLoadedByName \(region.description)")
             XCTAssertTrue(region.code == "009", "Oceania should have code 009")
         } else {
             XCTAssertTrue(false, "Oceania should be loaded by name")
@@ -97,7 +97,7 @@ class GDGeoDataTests: XCTestCase {
     func testSubRegionByRegionAndSubRegionCode() {
         if let region = GDRegion(name: "Oceania") {
             if let subRegion = GDSubRegion(code: "057", region: region) {
-                println("testSubRegionByRegionAndSubRegionCode \(subRegion.description)")
+                print("testSubRegionByRegionAndSubRegionCode \(subRegion.description)")
                 XCTAssertTrue(subRegion.name == "Micronesia", "Micronesia should be loaded with Oceania and code 057")
             } else {
                 XCTAssertTrue(false, "Micronesia should be loaded by region and code")

@@ -164,13 +164,13 @@ let kGDCountryJSONFilePath = "GDCountries"
             var countryArrayTemp = [GDCountry]()
 
             dispatch_once(&Static.countryOnceToken) {
-                var error:NSError?
                 
-                var bundle = GDCountry.bundle()
+                let bundle = GDCountry.bundle()
 
                 if let path = bundle?.pathForResource(kGDCountryJSONFilePath, ofType: "json") {
                     if let data = NSData(contentsOfFile: path) {
-                        if let json:AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error:&error) {
+                        do {
+                            let json:AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
                             // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
                             if let nsArrayObject = json as? NSArray {
                                 if let swiftArray = nsArrayObject as? Array<Dictionary<String,String>> {
@@ -180,6 +180,10 @@ let kGDCountryJSONFilePath = "GDCountries"
                                     }
                                 }
                             }
+                        } catch let error as NSError {
+                            print("error \(error)")
+                        } catch {
+                            fatalError()
                         }
                     }
                 }

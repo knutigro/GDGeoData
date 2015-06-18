@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GDGeoDataListViewController: UITableViewController, UITableViewDelegate {
+class GDGeoDataListViewController: UITableViewController {
     
     var geoDataSource : GDGeoDataDataSource? {
         didSet {
@@ -30,7 +30,6 @@ class GDGeoDataListViewController: UITableViewController, UITableViewDelegate {
     override  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         if let dataSource = self.tableView.dataSource as? GDGeoDataDataSource {
-            let cell = tableView .cellForRowAtIndexPath(indexPath)
             
             if let region = dataSource.items[indexPath.row] as? GDRegion {
                 if let listViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataListViewController") as? GDGeoDataListViewController {
