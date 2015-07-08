@@ -39,29 +39,29 @@ let kGDRegionJSONFilePath = "GDRegions"
     
     public var debugDescription : String {
         var description = "SubRegion -"
-        description += "Name: " + (self.name ?? "nil")
-        description += "Code: " + (self.code ?? "nil")
+        description += "Name: " + (name ?? "nil")
+        description += "Code: " + (code ?? "nil")
         
         return description
     }
 
     public var description : String {
         var description = "SubRegion -"
-        description += "\nName: " + (self.name ?? "nil")
-        description += "\nCode: " + (self.code ?? "nil")
+        description += "\nName: " + (name ?? "nil")
+        description += "\nCode: " + (code ?? "nil")
         
         return description
     }
 
     public convenience init(dictionary : NSDictionary) {
         self.init()
-        self.name = dictionary[kRegionName] as? String
-        self.code = dictionary[kRegionCode] as? String
+        name = dictionary[kRegionName] as? String
+        code = dictionary[kRegionCode] as? String
         
         if let regions = dictionary[kSubRegions] as? Array<NSDictionary> {
             for regionDic in regions {
                 var subRegion = GDSubRegion(dictionary: regionDic)
-                self.subRegions.append(subRegion)
+                subRegions.append(subRegion)
             }
         }
     }
@@ -69,9 +69,9 @@ let kGDRegionJSONFilePath = "GDRegions"
     public convenience init?(region : GDRegion?) {
         self.init()
         if let regionTemp = region {
-            self.name = regionTemp.name
-            self.code = regionTemp.code
-            self.subRegions = regionTemp.subRegions
+            name = regionTemp.name
+            code = regionTemp.code
+            subRegions = regionTemp.subRegions
         } else {
             return nil
         }
@@ -152,7 +152,7 @@ let kGDRegionJSONFilePath = "GDRegions"
         get {
             var countries = [GDCountry]()
             for country in GDCountry.countries {
-                if (country.regionCode?.lowercaseString == self.code?.lowercaseString) {
+                if (country.regionCode?.lowercaseString == code?.lowercaseString) {
                     countries.append(country)
                 }
             }

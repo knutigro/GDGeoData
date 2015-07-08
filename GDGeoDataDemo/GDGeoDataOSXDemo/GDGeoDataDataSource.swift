@@ -13,22 +13,22 @@ class GDGeoDataDataSource : NSObject, NSTableViewDataSource {
     var items : [AnyObject]
     
     override init() {
-        self.items = GDRegion.regions
+        items = GDRegion.regions
     }
 
     init(region : GDRegion) {
         if region.name != nil && region.name == "World" {
-            self.items = GDCountry.countries
+            items = GDCountry.countries
         } else {
-            self.items = region.subRegions
+            items = region.subRegions
         }
     }
 
     init(subRegion : GDSubRegion) {
-        self.items = subRegion.countries
+        items = subRegion.countries
     }
     
     func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
-        return self.items.count
+        return items.count
     }
 }

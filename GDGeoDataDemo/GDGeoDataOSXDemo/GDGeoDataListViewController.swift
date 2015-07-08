@@ -17,22 +17,22 @@ class GDGeoDataListViewController: NSViewController, NSTableViewDelegate {
 
     var regionDataSource : GDGeoDataDataSource? {
         didSet {
-            self.regionTableView.setDataSource(regionDataSource)
-            self.regionTableView.reloadData()
+            regionTableView.setDataSource(regionDataSource)
+            regionTableView.reloadData()
         }
     }
 
     var subRegionDataSource : GDGeoDataDataSource? {
         didSet {
-            self.subRegiontableView.setDataSource(subRegionDataSource)
-            self.subRegiontableView.reloadData()
+            subRegiontableView.setDataSource(subRegionDataSource)
+            subRegiontableView.reloadData()
         }
     }
 
     var countryDataSource : GDGeoDataDataSource? {
         didSet {
-            self.countryTableView.setDataSource(countryDataSource)
-            self.countryTableView.reloadData()
+            countryTableView.setDataSource(countryDataSource)
+            countryTableView.reloadData()
         }
     }
 
@@ -40,8 +40,8 @@ class GDGeoDataListViewController: NSViewController, NSTableViewDelegate {
         super.viewDidLoad()
         
         // Default configuration
-        if (self.regionDataSource == nil) {
-            self.regionDataSource = GDGeoDataDataSource()
+        if (regionDataSource == nil) {
+            regionDataSource = GDGeoDataDataSource()
         }
     }
     
@@ -69,26 +69,26 @@ class GDGeoDataListViewController: NSViewController, NSTableViewDelegate {
 
             if index == -1 { return   }
             
-            if tableView == self.regionTableView {
-                if let region = self.regionDataSource?.items[index] as? GDRegion {
+            if tableView == regionTableView {
+                if let region = regionDataSource?.items[index] as? GDRegion {
                     if index == 0 {
-                        self.countryDataSource = GDGeoDataDataSource(region: region)
-                        self.subRegionDataSource = nil;
-                        self.textField?.stringValue = ""
+                        countryDataSource = GDGeoDataDataSource(region: region)
+                        subRegionDataSource = nil;
+                        textField?.stringValue = ""
                     } else {
-                        self.subRegionDataSource = GDGeoDataDataSource(region: region)
-                        self.countryDataSource = nil;
-                        self.textField?.stringValue = ""
+                        subRegionDataSource = GDGeoDataDataSource(region: region)
+                        countryDataSource = nil;
+                        textField?.stringValue = ""
                     }
                 }
-            } else if tableView == self.subRegiontableView {
-                if let subRegion = self.subRegionDataSource?.items[index] as? GDSubRegion {
-                    self.countryDataSource = GDGeoDataDataSource(subRegion: subRegion)
-                    self.textField?.stringValue = ""
+            } else if tableView == subRegiontableView {
+                if let subRegion = subRegionDataSource?.items[index] as? GDSubRegion {
+                    countryDataSource = GDGeoDataDataSource(subRegion: subRegion)
+                    textField?.stringValue = ""
                 }
-            } else if tableView == self.countryTableView {
-                if let country = self.countryDataSource?.items[index] as? GDCountry {
-                    self.textField?.stringValue = country.description
+            } else if tableView == countryTableView {
+                if let country = countryDataSource?.items[index] as? GDCountry {
+                    textField?.stringValue = country.description
                 }
             }
             

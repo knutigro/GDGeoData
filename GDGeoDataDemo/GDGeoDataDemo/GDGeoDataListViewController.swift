@@ -12,7 +12,7 @@ class GDGeoDataListViewController: UITableViewController, UITableViewDelegate {
     
     var geoDataSource : GDGeoDataDataSource? {
         didSet {
-            self.tableView.dataSource = geoDataSource
+            tableView.dataSource = geoDataSource
         }
     }
     
@@ -20,8 +20,8 @@ class GDGeoDataListViewController: UITableViewController, UITableViewDelegate {
         super.viewDidLoad()
         
         // Default configuration
-        if (self.geoDataSource == nil) {
-            self.geoDataSource = GDGeoDataDataSource()
+        if (geoDataSource == nil) {
+            geoDataSource = GDGeoDataDataSource()
         }
     }
 
@@ -29,26 +29,26 @@ class GDGeoDataListViewController: UITableViewController, UITableViewDelegate {
 
     override  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-        if let dataSource = self.tableView.dataSource as? GDGeoDataDataSource {
+        if let dataSource = tableView.dataSource as? GDGeoDataDataSource {
             let cell = tableView .cellForRowAtIndexPath(indexPath)
             
             if let region = dataSource.items[indexPath.row] as? GDRegion {
-                if let listViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataListViewController") as? GDGeoDataListViewController {
+                if let listViewController = storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataListViewController") as? GDGeoDataListViewController {
                     listViewController.geoDataSource = GDGeoDataDataSource(region: region)
                     listViewController.title = region.name
-                    self.navigationController?.pushViewController(listViewController, animated: true)
+                    navigationController?.pushViewController(listViewController, animated: true)
                 }
             } else if let subRegion = dataSource.items[indexPath.row] as? GDSubRegion {
-                if let listViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataListViewController") as? GDGeoDataListViewController {
+                if let listViewController = storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataListViewController") as? GDGeoDataListViewController {
                     listViewController.geoDataSource = GDGeoDataDataSource(subRegion: subRegion)
                     listViewController.title = subRegion.name
-                    self.navigationController?.pushViewController(listViewController, animated: true)
+                    navigationController?.pushViewController(listViewController, animated: true)
                 }
             } else if let country = dataSource.items[indexPath.row] as? GDCountry {
-                if let detailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataDetailViewController") as? GDGeoDataDetailViewController {
+                if let detailViewController = storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataDetailViewController") as? GDGeoDataDetailViewController {
                     detailViewController.geoObject = country
                     detailViewController.title = country.name
-                    self.navigationController?.pushViewController(detailViewController, animated: true)
+                    navigationController?.pushViewController(detailViewController, animated: true)
                 }
             }
         }

@@ -14,19 +14,19 @@ class GDGeoDataDataSource : NSObject, UITableViewDataSource {
     var items : [AnyObject]
     
     override init() {
-        self.items = GDRegion.regions
+        items = GDRegion.regions
     }
 
     init(region : GDRegion) {
         if region.name != nil && region.name == "World" {
-            self.items = GDCountry.countries
+            items = GDCountry.countries
         } else {
-            self.items = region.subRegions
+            items = region.subRegions
         }
     }
 
     init(subRegion : GDSubRegion) {
-        self.items = subRegion.countries
+        items = subRegion.countries
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -34,17 +34,17 @@ class GDGeoDataDataSource : NSObject, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
         
-        if let geoDataObject = self.items[indexPath.row] as? GDGeoDataObjectProtocol {
+        if let geoDataObject = items[indexPath.row] as? GDGeoDataObjectProtocol {
             if let name = geoDataObject.name {
                 cell.textLabel?.text = name
             }
-        } else if let menuItem = self.items[indexPath.row] as? String {
+        } else if let menuItem = items[indexPath.row] as? String {
             cell.textLabel?.text = menuItem
         }
         

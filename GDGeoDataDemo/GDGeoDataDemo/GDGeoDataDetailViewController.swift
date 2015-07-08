@@ -16,9 +16,9 @@ class GDGeoDataDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let unWrappedTextView = self.textView {
-            if let unWrappedGeoObject = self.geoObject {
-                unWrappedTextView.text  = unWrappedGeoObject.description
+        if let textView = textView {
+            if let geoObject = geoObject {
+                textView.text  = geoObject.description
             }
         }
     }

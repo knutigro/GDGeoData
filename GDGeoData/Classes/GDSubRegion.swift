@@ -19,31 +19,31 @@ let kSubRegionName = "name"
     
     public var debugDescription : String {
         var description = "SubRegion -"
-        description += "Name: " + (self.name ?? "nil")
-        description += "Code: " + (self.code ?? "nil")
+        description += "Name: " + (name ?? "nil")
+        description += "Code: " + (code ?? "nil")
         
         return description
     }
     
     public var description : String {
         var description = "SubRegion -"
-        description += "\nName: " + (self.name ?? "nil")
-        description += "\nCode: " + (self.code ?? "nil")
+        description += "\nName: " + (name ?? "nil")
+        description += "\nCode: " + (code ?? "nil")
         
         return description
     }
     
     public convenience init(dictionary : NSDictionary) {
         self.init()
-        self.name = dictionary[kSubRegionName] as? String
-        self.code = dictionary[kSubRegionCode] as? String
+        name = dictionary[kSubRegionName] as? String
+        code = dictionary[kSubRegionCode] as? String
     }
     
     public convenience init?(subRegion : GDSubRegion?) {
         self.init()
         if let subRegionTemp = subRegion {
-            self.name = subRegionTemp.name
-            self.code = subRegionTemp.code
+            name = subRegionTemp.name
+            code = subRegionTemp.code
         } else {
             return nil
         }
@@ -90,7 +90,7 @@ let kSubRegionName = "name"
         get {
             var countries = [GDCountry]()
             for country in GDCountry.countries {
-                if (country.subRegionCode?.lowercaseString == self.code?.lowercaseString) {
+                if (country.subRegionCode?.lowercaseString == code?.lowercaseString) {
                     countries.append(country)
                 }
             }

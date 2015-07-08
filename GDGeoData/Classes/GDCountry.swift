@@ -47,30 +47,30 @@ let kGDCountryJSONFilePath = "GDCountries"
     
     public var debugDescription : String {
         var description = "Country -"
-        description += " Name: " + (self.name ?? "nil")
-        description += " Alpha2: " + (self.alpha2 ?? "nil")
-        description += " Alpha3: " + (self.alpha3 ?? "nil")
-        description += " CountryCode: " + (self.code ?? "nil")
-        description += " Iso_3166_2: " + (self.iso_3166_2 ?? "nil")
-        description += " RegionCode: " + (self.regionCode ?? "nil")
-        description += " SubRegionCode: " + (self.subRegionCode ?? "nil")
-        description += " Region: " + (self.region?.name ?? "nil")
-        description += " SubRegion: " + (self.subRegion?.name ?? "nil")
+        description += " Name: " + (name ?? "nil")
+        description += " Alpha2: " + (alpha2 ?? "nil")
+        description += " Alpha3: " + (alpha3 ?? "nil")
+        description += " CountryCode: " + (code ?? "nil")
+        description += " Iso_3166_2: " + (iso_3166_2 ?? "nil")
+        description += " RegionCode: " + (regionCode ?? "nil")
+        description += " SubRegionCode: " + (subRegionCode ?? "nil")
+        description += " Region: " + (region?.name ?? "nil")
+        description += " SubRegion: " + (subRegion?.name ?? "nil")
 
         return description
     }
     
     public var description : String {
         var description = "Country -"
-        description += "\nName: " + (self.name ?? "nil")
-        description += "\nAlpha2: " + (self.alpha2 ?? "nil")
-        description += "\nAlpha3: " + (self.alpha3 ?? "nil")
-        description += "\nCountryCode: " + (self.code ?? "nil")
-        description += "\nIso_3166_2: " + (self.iso_3166_2 ?? "nil")
-        description += "\nRegionCode: " + (self.regionCode ?? "nil")
-        description += "\nSubRegionCode: " + (self.subRegionCode ?? "nil")
-        description += "\nRegion: " + (self.region?.name ?? "nil")
-        description += "\nSubRegion: " + (self.subRegion?.name ?? "nil")
+        description += "\nName: " + (name ?? "nil")
+        description += "\nAlpha2: " + (alpha2 ?? "nil")
+        description += "\nAlpha3: " + (alpha3 ?? "nil")
+        description += "\nCountryCode: " + (code ?? "nil")
+        description += "\nIso_3166_2: " + (iso_3166_2 ?? "nil")
+        description += "\nRegionCode: " + (regionCode ?? "nil")
+        description += "\nSubRegionCode: " + (subRegionCode ?? "nil")
+        description += "\nRegion: " + (region?.name ?? "nil")
+        description += "\nSubRegion: " + (subRegion?.name ?? "nil")
         
         return description
     }
@@ -79,18 +79,18 @@ let kGDCountryJSONFilePath = "GDCountries"
 
     public convenience init(dictionary : NSDictionary) {
         self.init()
-        self.name = dictionary[kCountryName] as? String
-        self.alpha2 = dictionary[kCountryAlpha2] as? String
-        self.alpha3 = dictionary[kCountryAlpha3] as? String
-        self.code = dictionary[kCountryCode] as? String
-        self.iso_3166_2 = dictionary[kCountryIso_3166_2] as? String
-        self.regionCode = dictionary[kRegionCode] as? String
-        self.subRegionCode = dictionary[kSubRegionCode] as? String
-        if let regionCode = self.regionCode {
-            self.region = GDRegion(code: regionCode)
-            if let region = self.region {
-                if let subRegionCode = self.subRegionCode {
-                    self.subRegion = GDSubRegion(code: subRegionCode, region: region)
+        name = dictionary[kCountryName] as? String
+        alpha2 = dictionary[kCountryAlpha2] as? String
+        alpha3 = dictionary[kCountryAlpha3] as? String
+        code = dictionary[kCountryCode] as? String
+        iso_3166_2 = dictionary[kCountryIso_3166_2] as? String
+        regionCode = dictionary[kRegionCode] as? String
+        subRegionCode = dictionary[kSubRegionCode] as? String
+        if let regionCode = regionCode {
+            region = GDRegion(code: regionCode)
+            if let region = region {
+                if let subRegionCode = subRegionCode {
+                    subRegion = GDSubRegion(code: subRegionCode, region: region)
                 }
             }
         }
@@ -99,15 +99,15 @@ let kGDCountryJSONFilePath = "GDCountries"
     public convenience init?(country : GDCountry?) {
         self.init()
         if let countryTemp = country {
-            self.name = countryTemp.name
-            self.alpha2 = countryTemp.alpha2
-            self.alpha3 = countryTemp.alpha3
-            self.code = countryTemp.code
-            self.iso_3166_2 = countryTemp.iso_3166_2
-            self.regionCode = countryTemp.regionCode
-            self.subRegionCode = countryTemp.subRegionCode
-            self.region = countryTemp.region
-            self.subRegion = countryTemp.subRegion
+            name = countryTemp.name
+            alpha2 = countryTemp.alpha2
+            alpha3 = countryTemp.alpha3
+            code = countryTemp.code
+            iso_3166_2 = countryTemp.iso_3166_2
+            regionCode = countryTemp.regionCode
+            subRegionCode = countryTemp.subRegionCode
+            region = countryTemp.region
+            subRegion = countryTemp.subRegion
         } else {
             return nil
         }
