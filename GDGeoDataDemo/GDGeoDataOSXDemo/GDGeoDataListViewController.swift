@@ -52,9 +52,7 @@ class GDGeoDataListViewController: NSViewController, NSTableViewDelegate {
         
         if let dataSource = tableView.dataSource() as? GDGeoDataDataSource {
             if let geoDataObject = dataSource.items[row] as? GDGeoDataObjectProtocol {
-                if let name = geoDataObject.name {
-                    view.textField?.stringValue = name
-                }
+                view.textField?.stringValue = geoDataObject.name
             } else if let menuItem = dataSource.items[row] as? String {
                 view.textField?.stringValue = menuItem
             }

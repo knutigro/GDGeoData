@@ -33,21 +33,21 @@ let kCountryIso_3166_2 = "iso_3166-2"
 
 let kGDCountryJSONFilePath = "GDCountries"
 
-@objc public class GDCountry : GDGeoDataObjectProtocol {
+public class GDCountry: GDGeoDataObjectProtocol {
 
-    public var name : String?
-    public var code : String?
-    public var alpha2 : String?
-    public var alpha3 : String?
-    public var iso_3166_2 : String?
-    public var region : GDRegion?
-    public var subRegion : GDSubRegion?
-    public var regionCode : String?
-    public var subRegionCode : String?
+    public var name = ""
+    public var code = ""
+    public var alpha2: String?
+    public var alpha3: String?
+    public var iso_3166_2: String?
+    public var region: GDRegion?
+    public var subRegion: GDSubRegion?
+    public var regionCode: String?
+    public var subRegionCode: String?
     
     public var debugDescription : String {
         var description = "Country -"
-        description += " Name: " + (name ?? "nil")
+        description += " Name: " + name
         description += " Alpha2: " + (alpha2 ?? "nil")
         description += " Alpha3: " + (alpha3 ?? "nil")
         description += " CountryCode: " + (code ?? "nil")
@@ -62,7 +62,7 @@ let kGDCountryJSONFilePath = "GDCountries"
     
     public var description : String {
         var description = "Country -"
-        description += "\nName: " + (name ?? "nil")
+        description += "\nName: " + name
         description += "\nAlpha2: " + (alpha2 ?? "nil")
         description += "\nAlpha3: " + (alpha3 ?? "nil")
         description += "\nCountryCode: " + (code ?? "nil")
@@ -79,10 +79,14 @@ let kGDCountryJSONFilePath = "GDCountries"
 
     public convenience init(dictionary : NSDictionary) {
         self.init()
-        name = dictionary[kCountryName] as? String
+        if let name = dictionary[kCountryName] as? String {
+            self.name = name
+        }
+        if let code = dictionary[kCountryCode] as? String {
+            self.code = code
+        }
         alpha2 = dictionary[kCountryAlpha2] as? String
         alpha3 = dictionary[kCountryAlpha3] as? String
-        code = dictionary[kCountryCode] as? String
         iso_3166_2 = dictionary[kCountryIso_3166_2] as? String
         regionCode = dictionary[kRegionCode] as? String
         subRegionCode = dictionary[kSubRegionCode] as? String
@@ -116,7 +120,7 @@ let kGDCountryJSONFilePath = "GDCountries"
     public convenience init?(name: String) {
         var tempCountry : GDCountry?
         for country in GDCountry.countries {
-            if (country.name?.lowercaseString == name.lowercaseString) { tempCountry = country; break }
+            if (country.name.lowercaseString == name.lowercaseString) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
     }
@@ -124,7 +128,9 @@ let kGDCountryJSONFilePath = "GDCountries"
     convenience init?(alpha2: String) {
         var tempCountry : GDCountry?
         for country in GDCountry.countries {
-            if (country.alpha2?.lowercaseString == alpha2.lowercaseString) { tempCountry = country; break }
+            if let countryAlpha2 = country.alpha2?.lowercaseString {
+                if (countryAlpha2.lowercaseString == alpha2.lowercaseString) { tempCountry = country; break }
+            }
         }
         self.init(country: tempCountry)
     }
@@ -140,7 +146,7 @@ let kGDCountryJSONFilePath = "GDCountries"
     public convenience init?(code: String) {
         var tempCountry : GDCountry?
         for country in GDCountry.countries {
-            if (country.code?.lowercaseString == code.lowercaseString) { tempCountry = country; break }
+            if (country.code.lowercaseString == code.lowercaseString) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
     }
@@ -164,13 +170,12 @@ let kGDCountryJSONFilePath = "GDCountries"
             var countryArrayTemp = [GDCountry]()
 
             dispatch_once(&Static.countryOnceToken) {
-                var error:NSError?
-                
-                var bundle = GDCountry.bundle()
+                let bundle = GDCountry.bundle()
 
                 if let path = bundle?.pathForResource(kGDCountryJSONFilePath, ofType: "json") {
                     if let data = NSData(contentsOfFile: path) {
-                        if let json:AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error:&error) {
+                        do {
+                            let json:AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
                             // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
                             if let nsArrayObject = json as? NSArray {
                                 if let swiftArray = nsArrayObject as? Array<Dictionary<String,String>> {
@@ -180,6 +185,10 @@ let kGDCountryJSONFilePath = "GDCountries"
                                     }
                                 }
                             }
+                        } catch let error as NSError {
+                            print("Error: \(error)")
+                        } catch {
+                            fatalError()
                         }
                     }
                 }

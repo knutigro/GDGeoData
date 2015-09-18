@@ -18,7 +18,7 @@ class GDGeoDataDataSource : NSObject, UITableViewDataSource {
     }
 
     init(region : GDRegion) {
-        if region.name != nil && region.name == "World" {
+        if region.name == "World" {
             items = GDCountry.countries
         } else {
             items = region.subRegions
@@ -38,12 +38,10 @@ class GDGeoDataDataSource : NSObject, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
         
         if let geoDataObject = items[indexPath.row] as? GDGeoDataObjectProtocol {
-            if let name = geoDataObject.name {
-                cell.textLabel?.text = name
-            }
+            cell.textLabel?.text = geoDataObject.name
         } else if let menuItem = items[indexPath.row] as? String {
             cell.textLabel?.text = menuItem
         }

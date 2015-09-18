@@ -31,36 +31,41 @@ let kRegionCode = "region-code"
 
 let kGDRegionJSONFilePath = "GDRegions"
 
-@objc public class GDRegion : GDGeoDataObjectProtocol {
+public class GDRegion: GDGeoDataObjectProtocol {
 
-    public var name : String?
-    public var code : String?
+    public var name = ""
+    public var code = ""
     public var subRegions = [GDSubRegion]()
     
     public var debugDescription : String {
         var description = "SubRegion -"
-        description += "Name: " + (name ?? "nil")
-        description += "Code: " + (code ?? "nil")
+        description += "Name: " + name
+        description += "Code: " + code
         
         return description
     }
 
     public var description : String {
         var description = "SubRegion -"
-        description += "\nName: " + (name ?? "nil")
-        description += "\nCode: " + (code ?? "nil")
+        description += "\nName: " + name
+        description += "\nCode: " + code
         
         return description
     }
 
     public convenience init(dictionary : NSDictionary) {
         self.init()
-        name = dictionary[kRegionName] as? String
-        code = dictionary[kRegionCode] as? String
+        if let name = dictionary[kRegionName] as? String {
+            self.name = name
+        }
         
+        if let code = dictionary[kRegionCode] as? String {
+            self.code = code
+        }
+
         if let regions = dictionary[kSubRegions] as? Array<NSDictionary> {
             for regionDic in regions {
-                var subRegion = GDSubRegion(dictionary: regionDic)
+                let subRegion = GDSubRegion(dictionary: regionDic)
                 subRegions.append(subRegion)
             }
         }
@@ -80,7 +85,7 @@ let kGDRegionJSONFilePath = "GDRegions"
     public convenience init?(name: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.regions {
-            if (region.name?.lowercaseString == name.lowercaseString) { tempRegion = region; break }
+            if (region.name.lowercaseString == name.lowercaseString) { tempRegion = region; break }
         }
         self.init(region: tempRegion)
     }
@@ -88,7 +93,7 @@ let kGDRegionJSONFilePath = "GDRegions"
     public convenience init?(code: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.regions {
-            if (region.code?.lowercaseString == code.lowercaseString) { tempRegion = region; break }
+            if (region.code.lowercaseString == code.lowercaseString) { tempRegion = region; break }
         }
         self.init(region: tempRegion)
     }
@@ -97,7 +102,7 @@ let kGDRegionJSONFilePath = "GDRegions"
         var tempRegion : GDRegion?
         for region in GDRegion.regions {
             for subRegion in region.subRegions {
-                if (subRegion.code?.lowercaseString == subRegionCode.lowercaseString) { tempRegion = region; break }
+                if (subRegion.code.lowercaseString == subRegionCode.lowercaseString) { tempRegion = region; break }
             }
         }
         self.init(region: tempRegion)
@@ -107,7 +112,7 @@ let kGDRegionJSONFilePath = "GDRegions"
         var tempRegion : GDRegion?
         for region in GDRegion.regions {
             for subRegion in region.subRegions {
-                if (subRegion.name?.lowercaseString == subRegionName.lowercaseString) { tempRegion = region; break }
+                if (subRegion.name.lowercaseString == subRegionName.lowercaseString) { tempRegion = region; break }
             }
         }
         self.init(region: tempRegion)
@@ -121,13 +126,11 @@ let kGDRegionJSONFilePath = "GDRegions"
             }
             var regionArrayTemp = [GDRegion]()
             dispatch_once(&Static.regionOnceToken) {
-                var error:NSError?
-                
-                var bundle = GDCountry.bundle()
-
+                let bundle = GDCountry.bundle()
                 if let path = bundle?.pathForResource(kGDRegionJSONFilePath, ofType: "json") {
                     if let data = NSData(contentsOfFile: path) {
-                        if let json:AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error:&error) {
+                        do {
+                            let json:AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
                             // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
                             if let nsArrayObject = json as? NSArray {
                                 if let swiftArray = nsArrayObject as? Array<Dictionary<String,AnyObject>> {
@@ -137,6 +140,10 @@ let kGDRegionJSONFilePath = "GDRegions"
                                     }
                                 }
                             }
+                        } catch let error as NSError {
+                            print("Error \(error)")
+                        } catch {
+                            fatalError()
                         }
                     }
                 }
@@ -152,7 +159,7 @@ let kGDRegionJSONFilePath = "GDRegions"
         get {
             var countries = [GDCountry]()
             for country in GDCountry.countries {
-                if (country.regionCode?.lowercaseString == code?.lowercaseString) {
+                if (country.regionCode?.lowercaseString == code.lowercaseString) {
                     countries.append(country)
                 }
             }

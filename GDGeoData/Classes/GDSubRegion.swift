@@ -12,31 +12,35 @@ let kSubRegions = "sub-regions"
 let kSubRegionCode = "sub-region-code"
 let kSubRegionName = "name"
 
-@objc public class GDSubRegion : GDGeoDataObjectProtocol {
+public class GDSubRegion: GDGeoDataObjectProtocol {
     
-    public var name : String?
-    public var code : String?
+    public var name = ""
+    public var code = ""
     
-    public var debugDescription : String {
+    public var debugDescription: String {
         var description = "SubRegion -"
-        description += "Name: " + (name ?? "nil")
-        description += "Code: " + (code ?? "nil")
+        description += "Name: " + name
+        description += "Code: " + code
         
         return description
     }
     
-    public var description : String {
+    public var description: String {
         var description = "SubRegion -"
-        description += "\nName: " + (name ?? "nil")
-        description += "\nCode: " + (code ?? "nil")
+        description += "\nName: " + name
+        description += "\nCode: " + code
         
         return description
     }
     
     public convenience init(dictionary : NSDictionary) {
         self.init()
-        name = dictionary[kSubRegionName] as? String
-        code = dictionary[kSubRegionCode] as? String
+        if let name = dictionary[kSubRegionName] as? String {
+            self.name = name
+        }
+        if let code = dictionary[kSubRegionCode] as? String {
+            self.code = code
+        }
     }
     
     public convenience init?(subRegion : GDSubRegion?) {
@@ -53,7 +57,7 @@ let kSubRegionName = "name"
         var tempSubRegion : GDSubRegion?
         if let region = GDRegion(name: regionName) {
             for subRegion in region.subRegions {
-                if (subRegion.name?.lowercaseString == name.lowercaseString) { tempSubRegion = subRegion; break }
+                if (subRegion.name.lowercaseString == name.lowercaseString) { tempSubRegion = subRegion; break }
             }
         }
         self.init(subRegion: tempSubRegion)
@@ -63,7 +67,7 @@ let kSubRegionName = "name"
         var tempSubRegion : GDSubRegion?
         if let region = GDRegion(code: regionCode) {
             for subRegion in region.subRegions {
-                if (subRegion.code?.lowercaseString == code.lowercaseString) { tempSubRegion = subRegion; break }
+                if (subRegion.code.lowercaseString == code.lowercaseString) { tempSubRegion = subRegion; break }
             }
         }
         self.init(subRegion: tempSubRegion)
@@ -72,7 +76,7 @@ let kSubRegionName = "name"
     public convenience init?(code: String, region: GDRegion) {
         var tempSubRegion : GDSubRegion?
         for subRegion in region.subRegions {
-            if (subRegion.code?.lowercaseString == code.lowercaseString) { tempSubRegion = subRegion; break }
+            if (subRegion.code.lowercaseString == code.lowercaseString) { tempSubRegion = subRegion; break }
         }
         self.init(subRegion: tempSubRegion)
     }
@@ -80,7 +84,7 @@ let kSubRegionName = "name"
     public convenience init?(name: String, region: GDRegion) {
         var tempSubRegion : GDSubRegion?
         for subRegion in region.subRegions {
-            if (subRegion.name?.lowercaseString == name.lowercaseString) { tempSubRegion = subRegion; break }
+            if (subRegion.name.lowercaseString == name.lowercaseString) { tempSubRegion = subRegion; break }
         }
         self.init(subRegion: tempSubRegion)
     }
@@ -90,7 +94,7 @@ let kSubRegionName = "name"
         get {
             var countries = [GDCountry]()
             for country in GDCountry.countries {
-                if (country.subRegionCode?.lowercaseString == code?.lowercaseString) {
+                if (country.subRegionCode?.lowercaseString == code.lowercaseString) {
                     countries.append(country)
                 }
             }

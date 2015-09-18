@@ -17,7 +17,7 @@ class GDGeoDataDataSource : NSObject, NSTableViewDataSource {
     }
 
     init(region : GDRegion) {
-        if region.name != nil && region.name == "World" {
+        if region.name == "World" {
             items = GDCountry.countries
         } else {
             items = region.subRegions
