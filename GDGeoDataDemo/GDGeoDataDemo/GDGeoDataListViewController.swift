@@ -27,23 +27,23 @@ class GDGeoDataListViewController: UITableViewController {
     
     // MARK:  UITableViewDelegate Methods
 
-    override  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         if let dataSource = tableView.dataSource as? GDGeoDataDataSource {
-            if let region = dataSource.items[indexPath.row] as? GDRegion {
-                if let listViewController = storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataListViewController") as? GDGeoDataListViewController {
+            if let region = dataSource.items[(indexPath as NSIndexPath).row] as? GDRegion {
+                if let listViewController = storyboard?.instantiateViewController(withIdentifier: "GDGeoDataListViewController") as? GDGeoDataListViewController {
                     listViewController.geoDataSource = GDGeoDataDataSource(region: region)
                     listViewController.title = region.name
                     navigationController?.pushViewController(listViewController, animated: true)
                 }
-            } else if let subRegion = dataSource.items[indexPath.row] as? GDSubRegion {
-                if let listViewController = storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataListViewController") as? GDGeoDataListViewController {
+            } else if let subRegion = dataSource.items[(indexPath as NSIndexPath).row] as? GDSubRegion {
+                if let listViewController = storyboard?.instantiateViewController(withIdentifier: "GDGeoDataListViewController") as? GDGeoDataListViewController {
                     listViewController.geoDataSource = GDGeoDataDataSource(subRegion: subRegion)
                     listViewController.title = subRegion.name
                     navigationController?.pushViewController(listViewController, animated: true)
                 }
-            } else if let country = dataSource.items[indexPath.row] as? GDCountry {
-                if let detailViewController = storyboard?.instantiateViewControllerWithIdentifier("GDGeoDataDetailViewController") as? GDGeoDataDetailViewController {
+            } else if let country = dataSource.items[(indexPath as NSIndexPath).row] as? GDCountry {
+                if let detailViewController = storyboard?.instantiateViewController(withIdentifier: "GDGeoDataDetailViewController") as? GDGeoDataDetailViewController {
                     detailViewController.geoObject = country
                     detailViewController.title = country.name
                     navigationController?.pushViewController(detailViewController, animated: true)

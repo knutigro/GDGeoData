@@ -12,12 +12,12 @@ let kSubRegions = "sub-regions"
 let kSubRegionCode = "sub-region-code"
 let kSubRegionName = "name"
 
-public class GDSubRegion: GDGeoDataObjectProtocol {
+open class GDSubRegion: GDGeoDataObjectProtocol {
     
-    public var name = ""
-    public var code = ""
+    open var name = ""
+    open var code = ""
     
-    public var debugDescription: String {
+    open var debugDescription: String {
         var description = "SubRegion -"
         description += "Name: " + name
         description += "Code: " + code
@@ -25,7 +25,7 @@ public class GDSubRegion: GDGeoDataObjectProtocol {
         return description
     }
     
-    public var description: String {
+    open var description: String {
         var description = "SubRegion -"
         description += "\nName: " + name
         description += "\nCode: " + code
@@ -57,7 +57,7 @@ public class GDSubRegion: GDGeoDataObjectProtocol {
         var tempSubRegion : GDSubRegion?
         if let region = GDRegion(name: regionName) {
             for subRegion in region.subRegions {
-                if (subRegion.name.lowercaseString == name.lowercaseString) { tempSubRegion = subRegion; break }
+                if (subRegion.name.lowercased() == name.lowercased()) { tempSubRegion = subRegion; break }
             }
         }
         self.init(subRegion: tempSubRegion)
@@ -67,7 +67,7 @@ public class GDSubRegion: GDGeoDataObjectProtocol {
         var tempSubRegion : GDSubRegion?
         if let region = GDRegion(code: regionCode) {
             for subRegion in region.subRegions {
-                if (subRegion.code.lowercaseString == code.lowercaseString) { tempSubRegion = subRegion; break }
+                if (subRegion.code.lowercased() == code.lowercased()) { tempSubRegion = subRegion; break }
             }
         }
         self.init(subRegion: tempSubRegion)
@@ -76,7 +76,7 @@ public class GDSubRegion: GDGeoDataObjectProtocol {
     public convenience init?(code: String, region: GDRegion) {
         var tempSubRegion : GDSubRegion?
         for subRegion in region.subRegions {
-            if (subRegion.code.lowercaseString == code.lowercaseString) { tempSubRegion = subRegion; break }
+            if (subRegion.code.lowercased() == code.lowercased()) { tempSubRegion = subRegion; break }
         }
         self.init(subRegion: tempSubRegion)
     }
@@ -84,17 +84,17 @@ public class GDSubRegion: GDGeoDataObjectProtocol {
     public convenience init?(name: String, region: GDRegion) {
         var tempSubRegion : GDSubRegion?
         for subRegion in region.subRegions {
-            if (subRegion.name.lowercaseString == name.lowercaseString) { tempSubRegion = subRegion; break }
+            if (subRegion.name.lowercased() == name.lowercased()) { tempSubRegion = subRegion; break }
         }
         self.init(subRegion: tempSubRegion)
     }
     
     //  Returns Array with all coutries whithin a subregion
-    public var countries : [GDCountry] {
+    open var countries : [GDCountry] {
         get {
             var countries = [GDCountry]()
             for country in GDCountry.countries {
-                if (country.subRegionCode?.lowercaseString == code.lowercaseString) {
+                if (country.subRegionCode?.lowercased() == code.lowercased()) {
                     countries.append(country)
                 }
             }

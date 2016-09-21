@@ -33,24 +33,24 @@ let kCountryIso_3166_2 = "iso_3166-2"
 
 let kGDCountryJSONFilePath = "GDCountries"
 
-public class GDCountry: GDGeoDataObjectProtocol {
+open class GDCountry: GDGeoDataObjectProtocol {
 
-    public var name = ""
-    public var code = ""
-    public var alpha2: String?
-    public var alpha3: String?
-    public var iso_3166_2: String?
-    public var region: GDRegion?
-    public var subRegion: GDSubRegion?
-    public var regionCode: String?
-    public var subRegionCode: String?
+    open var name = ""
+    open var code = ""
+    open var alpha2: String?
+    open var alpha3: String?
+    open var iso_3166_2: String?
+    open var region: GDRegion?
+    open var subRegion: GDSubRegion?
+    open var regionCode: String?
+    open var subRegionCode: String?
     
-    public var debugDescription : String {
+    open var debugDescription : String {
         var description = "Country -"
         description += " Name: " + name
         description += " Alpha2: " + (alpha2 ?? "nil")
         description += " Alpha3: " + (alpha3 ?? "nil")
-        description += " CountryCode: " + (code ?? "nil")
+        description += " CountryCode: " + code
         description += " Iso_3166_2: " + (iso_3166_2 ?? "nil")
         description += " RegionCode: " + (regionCode ?? "nil")
         description += " SubRegionCode: " + (subRegionCode ?? "nil")
@@ -60,12 +60,12 @@ public class GDCountry: GDGeoDataObjectProtocol {
         return description
     }
     
-    public var description : String {
+    open var description : String {
         var description = "Country -"
         description += "\nName: " + name
         description += "\nAlpha2: " + (alpha2 ?? "nil")
         description += "\nAlpha3: " + (alpha3 ?? "nil")
-        description += "\nCountryCode: " + (code ?? "nil")
+        description += "\nCountryCode: " + code
         description += "\nIso_3166_2: " + (iso_3166_2 ?? "nil")
         description += "\nRegionCode: " + (regionCode ?? "nil")
         description += "\nSubRegionCode: " + (subRegionCode ?? "nil")
@@ -120,7 +120,7 @@ public class GDCountry: GDGeoDataObjectProtocol {
     public convenience init?(name: String) {
         var tempCountry : GDCountry?
         for country in GDCountry.countries {
-            if (country.name.lowercaseString == name.lowercaseString) { tempCountry = country; break }
+            if (country.name.lowercased() == name.lowercased()) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
     }
@@ -128,8 +128,8 @@ public class GDCountry: GDGeoDataObjectProtocol {
     convenience init?(alpha2: String) {
         var tempCountry : GDCountry?
         for country in GDCountry.countries {
-            if let countryAlpha2 = country.alpha2?.lowercaseString {
-                if (countryAlpha2.lowercaseString == alpha2.lowercaseString) { tempCountry = country; break }
+            if let countryAlpha2 = country.alpha2?.lowercased() {
+                if (countryAlpha2.lowercased() == alpha2.lowercased()) { tempCountry = country; break }
             }
         }
         self.init(country: tempCountry)
@@ -138,7 +138,7 @@ public class GDCountry: GDGeoDataObjectProtocol {
     public convenience init?(alpha3: String) {
         var tempCountry : GDCountry?
         for country in GDCountry.countries {
-            if (country.alpha3?.lowercaseString == alpha3.lowercaseString) { tempCountry = country; break }
+            if (country.alpha3?.lowercased() == alpha3.lowercased()) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
     }
@@ -146,7 +146,7 @@ public class GDCountry: GDGeoDataObjectProtocol {
     public convenience init?(code: String) {
         var tempCountry : GDCountry?
         for country in GDCountry.countries {
-            if (country.code.lowercaseString == code.lowercaseString) { tempCountry = country; break }
+            if (country.code.lowercased() == code.lowercased()) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
     }
@@ -154,57 +154,49 @@ public class GDCountry: GDGeoDataObjectProtocol {
     public convenience init?(iso_3166_2: String) {
         var tempCountry : GDCountry?
         for country in GDCountry.countries {
-            if (country.iso_3166_2?.lowercaseString == iso_3166_2.lowercaseString) { tempCountry = country; break }
+            if (country.iso_3166_2?.lowercased() == iso_3166_2.lowercased()) { tempCountry = country; break }
         }
         self.init(country: tempCountry)
     }
     
     // MARK:  Public methods
-
-    public class var countries: [GDCountry] {
-        get {
-            struct Static {
-                static var countryArrayInstance : [GDCountry]? = nil
-                static var countryOnceToken: dispatch_once_t = 0
-            }
-            var countryArrayTemp = [GDCountry]()
-
-            dispatch_once(&Static.countryOnceToken) {
-                let bundle = GDCountry.bundle()
-
-                if let path = bundle?.pathForResource(kGDCountryJSONFilePath, ofType: "json") {
-                    if let data = NSData(contentsOfFile: path) {
-                        do {
-                            let json:AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-                            // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
-                            if let nsArrayObject = json as? NSArray {
-                                if let swiftArray = nsArrayObject as? Array<Dictionary<String,String>> {
-                                    for object in swiftArray {
-                                        let country = GDCountry(dictionary: object)
-                                        countryArrayTemp.append(country)
-                                    }
-                                }
+    
+    open static var countries: [GDCountry] = {
+        var countryArrayTemp = [GDCountry]()
+        
+        let bundle = GDCountry.bundle()
+        
+        if let path = bundle?.path(forResource: kGDCountryJSONFilePath, ofType: "json") {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
+                do {
+                    let json:Any = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.allowFragments)
+                    // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
+                    if let nsArrayObject = json as? NSArray {
+                        if let swiftArray = nsArrayObject as? Array<Dictionary<String,String>> {
+                            for object in swiftArray {
+                                let country = GDCountry(dictionary: object as NSDictionary)
+                                countryArrayTemp.append(country)
                             }
-                        } catch let error as NSError {
-                            print("Error: \(error)")
-                        } catch {
-                            fatalError()
                         }
                     }
+                } catch let error as NSError {
+                    print("Error: \(error)")
+                } catch {
+                    fatalError()
                 }
-                Static.countryArrayInstance = countryArrayTemp
             }
-            
-            return Static.countryArrayInstance!
         }
-    }
-    
-    public class func bundle() -> NSBundle? {
-        var bundle : NSBundle?
-        if let bundleUrl = NSBundle(forClass: self).URLForResource("GDGeoData", withExtension: "bundle") {
-            bundle = NSBundle(URL: bundleUrl)
+        let countryArrayInstance = countryArrayTemp
+        
+        return countryArrayInstance
+    }()
+
+    open class func bundle() -> Bundle? {
+        var bundle : Bundle?
+        if let bundleUrl = Bundle(for: self).url(forResource: "GDGeoData", withExtension: "bundle") {
+            bundle = Bundle(url: bundleUrl)
         } else {
-            bundle = NSBundle.mainBundle()
+            bundle = Bundle.main
         }
         
         return bundle

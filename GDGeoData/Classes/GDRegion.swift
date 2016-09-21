@@ -85,7 +85,7 @@ public class GDRegion: GDGeoDataObjectProtocol {
     public convenience init?(name: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.regions {
-            if (region.name.lowercaseString == name.lowercaseString) { tempRegion = region; break }
+            if (region.name.lowercased() == name.lowercased()) { tempRegion = region; break }
         }
         self.init(region: tempRegion)
     }
@@ -93,7 +93,7 @@ public class GDRegion: GDGeoDataObjectProtocol {
     public convenience init?(code: String) {
         var tempRegion : GDRegion?
         for region in GDRegion.regions {
-            if (region.code.lowercaseString == code.lowercaseString) { tempRegion = region; break }
+            if (region.code.lowercased() == code.lowercased()) { tempRegion = region; break }
         }
         self.init(region: tempRegion)
     }
@@ -102,7 +102,7 @@ public class GDRegion: GDGeoDataObjectProtocol {
         var tempRegion : GDRegion?
         for region in GDRegion.regions {
             for subRegion in region.subRegions {
-                if (subRegion.code.lowercaseString == subRegionCode.lowercaseString) { tempRegion = region; break }
+                if (subRegion.code.lowercased() == subRegionCode.lowercased()) { tempRegion = region; break }
             }
         }
         self.init(region: tempRegion)
@@ -112,54 +112,46 @@ public class GDRegion: GDGeoDataObjectProtocol {
         var tempRegion : GDRegion?
         for region in GDRegion.regions {
             for subRegion in region.subRegions {
-                if (subRegion.name.lowercaseString == subRegionName.lowercaseString) { tempRegion = region; break }
+                if (subRegion.name.lowercased() == subRegionName.lowercased()) { tempRegion = region; break }
             }
         }
         self.init(region: tempRegion)
     }
     
-    public class var regions: [GDRegion] {
-        get {
-            struct Static {
-                static var regionArrayInstance : [GDRegion]? = nil
-                static var regionOnceToken: dispatch_once_t = 0
-            }
-            var regionArrayTemp = [GDRegion]()
-            dispatch_once(&Static.regionOnceToken) {
-                let bundle = GDCountry.bundle()
-                if let path = bundle?.pathForResource(kGDRegionJSONFilePath, ofType: "json") {
-                    if let data = NSData(contentsOfFile: path) {
-                        do {
-                            let json:AnyObject = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
-                            // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
-                            if let nsArrayObject = json as? NSArray {
-                                if let swiftArray = nsArrayObject as? Array<Dictionary<String,AnyObject>> {
-                                    for object in swiftArray {
-                                        let region = GDRegion(dictionary: object)
-                                        regionArrayTemp.append(region)
-                                    }
-                                }
+    public static var regions: [GDRegion] = {
+        var regionArrayTemp = [GDRegion]()
+        let bundle = GDCountry.bundle()
+        if let path = bundle?.path(forResource: kGDRegionJSONFilePath, ofType: "json") {
+            if let data = NSData(contentsOfFile: path) {
+                do {
+                    let json:Any = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.allowFragments)
+                    // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
+                    if let nsArrayObject = json as? NSArray {
+                        if let swiftArray = nsArrayObject as? Array<Dictionary<String,AnyObject>> {
+                            for object in swiftArray {
+                                let region = GDRegion(dictionary: object as NSDictionary)
+                                regionArrayTemp.append(region)
                             }
-                        } catch let error as NSError {
-                            print("Error \(error)")
-                        } catch {
-                            fatalError()
                         }
                     }
+                } catch let error as NSError {
+                    print("Error \(error)")
+                } catch {
+                    fatalError()
                 }
-                Static.regionArrayInstance = regionArrayTemp
             }
-            
-            return Static.regionArrayInstance!
         }
-    }
+        let regionArrayInstance = regionArrayTemp
+        
+        return regionArrayInstance
+    }()
     
     //  Returns Array with all countries whithin a region
     public var countries : [GDCountry]{
         get {
             var countries = [GDCountry]()
             for country in GDCountry.countries {
-                if (country.regionCode?.lowercaseString == code.lowercaseString) {
+                if (country.regionCode?.lowercased() == code.lowercased()) {
                     countries.append(country)
                 }
             }
