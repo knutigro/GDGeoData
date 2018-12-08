@@ -161,7 +161,7 @@ open class GDCountry: GDGeoDataObjectProtocol {
     
     // MARK:  Public methods
     
-    open static var countries: [GDCountry] = {
+    public static var countries: [GDCountry] = {
         var countryArrayTemp = [GDCountry]()
         
         let bundle = GDCountry.bundle()

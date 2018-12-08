@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Knut Inge Grosland" => "”hei@knutinge.com”" }
   s.source           = { :git => "https://github.com/knutigro/GDGeoData.git", :tag => s.version }
-
+  s.swift_version    = '4.2'
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.10'
   s.requires_arc = true
