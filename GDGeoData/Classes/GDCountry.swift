@@ -33,19 +33,19 @@ let kCountryIso_3166_2 = "iso_3166-2"
 
 let kGDCountryJSONFilePath = "GDCountries"
 
-open class GDCountry: GDGeoDataObjectProtocol {
+public class GDCountry: GDGeoDataObjectProtocol {
 
-    open var name = ""
-    open var code = ""
-    open var alpha2: String?
-    open var alpha3: String?
-    open var iso_3166_2: String?
-    open var region: GDRegion?
-    open var subRegion: GDSubRegion?
-    open var regionCode: String?
-    open var subRegionCode: String?
+    public var name = ""
+    public var code = ""
+    public var alpha2: String?
+    public var alpha3: String?
+    public var iso_3166_2: String?
+    public var region: GDRegion?
+    public var subRegion: GDSubRegion?
+    public var regionCode: String?
+    public var subRegionCode: String?
     
-    open var debugDescription : String {
+    public var debugDescription : String {
         var description = "Country -"
         description += " Name: " + name
         description += " Alpha2: " + (alpha2 ?? "nil")
@@ -60,7 +60,7 @@ open class GDCountry: GDGeoDataObjectProtocol {
         return description
     }
     
-    open var description : String {
+    public var description : String {
         var description = "Country -"
         description += "\nName: " + name
         description += "\nAlpha2: " + (alpha2 ?? "nil")
@@ -191,7 +191,7 @@ open class GDCountry: GDGeoDataObjectProtocol {
         return countryArrayInstance
     }()
 
-    open class func bundle() -> Bundle? {
+    public class func bundle() -> Bundle? {
         var bundle : Bundle?
         if let bundleUrl = Bundle(for: self).url(forResource: "GDGeoData", withExtension: "bundle") {
             bundle = Bundle(url: bundleUrl)

@@ -12,12 +12,12 @@ let kSubRegions = "sub-regions"
 let kSubRegionCode = "sub-region-code"
 let kSubRegionName = "name"
 
-open class GDSubRegion: GDGeoDataObjectProtocol {
+public class GDSubRegion: GDGeoDataObjectProtocol {
     
-    open var name = ""
-    open var code = ""
+    public var name = ""
+    public var code = ""
     
-    open var debugDescription: String {
+    public var debugDescription: String {
         var description = "SubRegion -"
         description += "Name: " + name
         description += "Code: " + code
@@ -25,7 +25,7 @@ open class GDSubRegion: GDGeoDataObjectProtocol {
         return description
     }
     
-    open var description: String {
+    public var description: String {
         var description = "SubRegion -"
         description += "\nName: " + name
         description += "\nCode: " + code
@@ -90,7 +90,7 @@ open class GDSubRegion: GDGeoDataObjectProtocol {
     }
     
     //  Returns Array with all coutries whithin a subregion
-    open var countries : [GDCountry] {
+    public var countries : [GDCountry] {
         get {
             var countries = [GDCountry]()
             for country in GDCountry.countries {
