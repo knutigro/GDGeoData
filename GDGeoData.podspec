@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "GDGeoData"
-  s.version          = "0.3.0"
+  s.version          = "0.3.1"
   s.summary          = "Swift wrapper for easy use of countries and regiones with ISO codes"
   s.description      = <<-DESC
                         Swift wrapper for easy use of country and region data from https://github.com/knutigro/ISO-3166-Countries-with-Regional-Codes
