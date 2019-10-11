@@ -45,6 +45,15 @@ public class GDCountry: GDGeoDataObjectProtocol {
     public var regionCode: String?
     public var subRegionCode: String?
     
+    public static func == (lhs: GDCountry, rhs: GDCountry) -> Bool {
+        return lhs.name == rhs.name || lhs.code == rhs.code
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(code)
+    }
+
     public var debugDescription : String {
         var description = "Country -"
         description += " Name: " + name

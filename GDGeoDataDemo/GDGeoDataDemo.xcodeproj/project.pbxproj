@@ -29,22 +29,21 @@
 		49A7FE6D1ABF40D600473BCF /* GDSubRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7FE6C1ABF40D600473BCF /* GDSubRegion.swift */; };
 		49A7FE6E1ABF456700473BCF /* GDSubRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7FE6C1ABF40D600473BCF /* GDSubRegion.swift */; };
 		49A7FE6F1ABF456A00473BCF /* GDGeoDataObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7FE6A1ABF3F3400473BCF /* GDGeoDataObjectProtocol.swift */; };
-		49A7FE711ABF4F3900473BCF /* GDGeoDataDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7FE701ABF4F3900473BCF /* GDGeoDataDataSource.swift */; };
 		49FEF1381ABCB01300E75579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1371ABCB01300E75579 /* AppDelegate.swift */; };
-		49FEF13D1ABCB01300E75579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF13B1ABCB01300E75579 /* Main.storyboard */; };
 		49FEF13F1ABCB01300E75579 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF13E1ABCB01300E75579 /* Images.xcassets */; };
 		49FEF1421ABCB01300E75579 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF1401ABCB01300E75579 /* LaunchScreen.xib */; };
 		49FEF1621ABD8B4600E75579 /* GDCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF15A1ABD8B4600E75579 /* GDCountries.json */; };
 		49FEF1631ABD8B4600E75579 /* GDRegions.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF15B1ABD8B4600E75579 /* GDRegions.json */; };
 		49FEF1651ABD8B4600E75579 /* GDCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF15E1ABD8B4600E75579 /* GDCountry.swift */; };
 		49FEF1661ABD8B4600E75579 /* GDRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1601ABD8B4600E75579 /* GDRegion.swift */; };
-		49FEF16F1ABD8CEA00E75579 /* GDGeoDataListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF16E1ABD8CEA00E75579 /* GDGeoDataListViewController.swift */; };
-		49FEF1711ABD920500E75579 /* GDGeoDataDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1701ABD920500E75579 /* GDGeoDataDetailViewController.swift */; };
 		49FEF1751ABDABC200E75579 /* GDGeoDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1741ABDABC200E75579 /* GDGeoDataTest.swift */; };
 		49FEF1761ABDAD2D00E75579 /* GDCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF15E1ABD8B4600E75579 /* GDCountry.swift */; };
 		49FEF1771ABDAD3000E75579 /* GDRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1601ABD8B4600E75579 /* GDRegion.swift */; };
 		49FEF1781ABDAD3300E75579 /* GDCountries.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF15A1ABD8B4600E75579 /* GDCountries.json */; };
 		49FEF1791ABDAD3500E75579 /* GDRegions.json in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF15B1ABD8B4600E75579 /* GDRegions.json */; };
+		CAA6893D23511319002F5EE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA6893C23511319002F5EE4 /* SceneDelegate.swift */; };
+		CAA6893F235113F0002F5EE4 /* GDGeoDataListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA6893E235113F0002F5EE4 /* GDGeoDataListView.swift */; };
+		CAA68941235137F9002F5EE4 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA68940235137F9002F5EE4 /* CountryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,11 +76,9 @@
 		497DF36A1AF2203500EDE48D /* GDGeoDataListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataListViewController.swift; sourceTree = "<group>"; };
 		49A7FE6A1ABF3F3400473BCF /* GDGeoDataObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataObjectProtocol.swift; sourceTree = "<group>"; };
 		49A7FE6C1ABF40D600473BCF /* GDSubRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDSubRegion.swift; sourceTree = "<group>"; };
-		49A7FE701ABF4F3900473BCF /* GDGeoDataDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataDataSource.swift; sourceTree = "<group>"; };
 		49FEF1321ABCB01300E75579 /* GDGeoDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDGeoDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FEF1361ABCB01300E75579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FEF1371ABCB01300E75579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49FEF13C1ABCB01300E75579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49FEF13E1ABCB01300E75579 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		49FEF1411ABCB01300E75579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		49FEF1471ABCB01300E75579 /* GDGeoDataDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDGeoDataDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,9 +90,10 @@
 		49FEF1681ABD8BEA00E75579 /* GDGeoData.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GDGeoData.podspec; path = ../GDGeoData.podspec; sourceTree = "<group>"; };
 		49FEF1691ABD8BEA00E75579 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		49FEF16A1ABD8BEA00E75579 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		49FEF16E1ABD8CEA00E75579 /* GDGeoDataListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataListViewController.swift; sourceTree = "<group>"; };
-		49FEF1701ABD920500E75579 /* GDGeoDataDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataDetailViewController.swift; sourceTree = "<group>"; };
 		49FEF1741ABDABC200E75579 /* GDGeoDataTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDGeoDataTest.swift; sourceTree = "<group>"; };
+		CAA6893C23511319002F5EE4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CAA6893E235113F0002F5EE4 /* GDGeoDataListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDGeoDataListView.swift; sourceTree = "<group>"; };
+		CAA68940235137F9002F5EE4 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,10 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				49FEF1371ABCB01300E75579 /* AppDelegate.swift */,
-				49A7FE701ABF4F3900473BCF /* GDGeoDataDataSource.swift */,
-				49FEF16E1ABD8CEA00E75579 /* GDGeoDataListViewController.swift */,
-				49FEF1701ABD920500E75579 /* GDGeoDataDetailViewController.swift */,
-				49FEF13B1ABCB01300E75579 /* Main.storyboard */,
+				CAA6893C23511319002F5EE4 /* SceneDelegate.swift */,
+				CAA6893E235113F0002F5EE4 /* GDGeoDataListView.swift */,
+				CAA68940235137F9002F5EE4 /* CountryView.swift */,
 				49FEF13E1ABCB01300E75579 /* Images.xcassets */,
 				49FEF1401ABCB01300E75579 /* LaunchScreen.xib */,
 				49FEF1351ABCB01300E75579 /* Supporting Files */,
@@ -370,12 +367,12 @@
 					49FEF1311ABCB01300E75579 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = 2PRW676NCQ;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1100;
 					};
 					49FEF1461ABCB01300E75579 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = 2PRW676NCQ;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1100;
 						TestTargetID = 49FEF1311ABCB01300E75579;
 					};
 				};
@@ -385,6 +382,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -426,7 +424,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49FEF13D1ABCB01300E75579 /* Main.storyboard in Resources */,
 				49FEF1421ABCB01300E75579 /* LaunchScreen.xib in Resources */,
 				49FEF1621ABD8B4600E75579 /* GDCountries.json in Resources */,
 				49FEF13F1ABCB01300E75579 /* Images.xcassets in Resources */,
@@ -477,11 +474,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49A7FE6B1ABF3F3400473BCF /* GDGeoDataObjectProtocol.swift in Sources */,
-				49A7FE711ABF4F3900473BCF /* GDGeoDataDataSource.swift in Sources */,
-				49FEF1711ABD920500E75579 /* GDGeoDataDetailViewController.swift in Sources */,
+				CAA6893D23511319002F5EE4 /* SceneDelegate.swift in Sources */,
 				49FEF1661ABD8B4600E75579 /* GDRegion.swift in Sources */,
-				49FEF16F1ABD8CEA00E75579 /* GDGeoDataListViewController.swift in Sources */,
+				CAA68941235137F9002F5EE4 /* CountryView.swift in Sources */,
 				49A7FE6D1ABF40D600473BCF /* GDSubRegion.swift in Sources */,
+				CAA6893F235113F0002F5EE4 /* GDGeoDataListView.swift in Sources */,
 				49FEF1381ABCB01300E75579 /* AppDelegate.swift in Sources */,
 				49FEF1651ABD8B4600E75579 /* GDCountry.swift in Sources */,
 			);
@@ -523,14 +520,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		49FEF13B1ABCB01300E75579 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				49FEF13C1ABCB01300E75579 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		49FEF1401ABCB01300E75579 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -561,6 +550,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocmoc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -579,6 +569,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocmoc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -678,7 +669,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -726,7 +718,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -742,11 +735,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2PRW676NCQ;
 				INFOPLIST_FILE = GDGeoDataDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocmoc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -757,11 +751,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 2PRW676NCQ;
 				INFOPLIST_FILE = GDGeoDataDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocmoc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -784,7 +779,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocmoc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDGeoDataDemo.app/GDGeoDataDemo";
 			};
 			name = Debug;
@@ -804,7 +799,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cocmoc.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDGeoDataDemo.app/GDGeoDataDemo";
 			};
 			name = Release;

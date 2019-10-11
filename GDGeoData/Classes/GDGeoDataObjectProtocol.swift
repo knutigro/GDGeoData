@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Cocmoc. All rights reserved.
 //
 
-protocol GDGeoDataObjectProtocol {
+public protocol GDGeoDataObjectProtocol: Hashable {
     var name: String {get set}
     var code: String {get set}
     var debugDescription: String {get}

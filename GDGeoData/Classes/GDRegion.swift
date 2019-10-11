@@ -32,7 +32,16 @@ let kRegionCode = "region-code"
 let kGDRegionJSONFilePath = "GDRegions"
 
 public class GDRegion: GDGeoDataObjectProtocol {
-
+    
+    public static func == (lhs: GDRegion, rhs: GDRegion) -> Bool {
+        return lhs.name == rhs.name || lhs.code == rhs.code
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(code)
+    }
+    
     public var name = ""
     public var code = ""
     public var subRegions = [GDSubRegion]()
